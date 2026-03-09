@@ -1,9 +1,11 @@
+import { NavLink } from "react-router-dom"
 import "../assets/styles/navBar.css"
 
 export default function Navbar() {
   return (
     <div>
-      <nav className="navBar flex justify-between bg-white dark:bg-black text-black dark:text-white text-nowrap items-center-safe" >
+      <nav
+        className="navBar flex justify-between bg-white dark:bg-black text-black dark:text-white text-nowrap items-center-safe" >
 
         <div className="logo-container order-first flex flex-col items-center-safe hover:cursor-pointer">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 34" data-supported-dps="34x34" fill="currentColor"
@@ -23,6 +25,15 @@ export default function Navbar() {
             </svg>
             <span>Home</span>
           </div>
+          <NavLink
+            to={"/feed"}
+            className={({ isActive }) => `home m-6 flex flex-col items-center-safe hover:cursor-pointer ${isActive ? "active" : ""}`}>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="currentColor"
+              className="mercado-match" width="24" height="24" focusable="false">
+              <path d="M23 9v2h-2v7a3 3 0 01-3 3h-4v-6h-4v6H6a3 3 0 01-3-3v-7H1V9l11-7 5 3.18V2h3v5.09z"></path>
+            </svg>
+            <span>Home</span>
+          </NavLink>
 
           <div className="network m-6 flex flex-col items-center-safe hover:cursor-pointer">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="currentColor" className="mercado-match" width="24" height="24" focusable="false">
