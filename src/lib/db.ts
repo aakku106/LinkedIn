@@ -1,8 +1,33 @@
-import Dexie from "dexie"
+import Dexie, { Table } from "dexie"
 
-export const db = new Dexie("linkedinClone")
+export interface User {
+  id?: number
+  name: string
+  email: string
+  password: string
+  avatar?: string
+}
 
-db.version(1).stores({
-  users: "++id,email",
-  posts: "++id,userId,createdAt"
-})
+export interface Post {
+  id?: number
+  userId: number
+  content: string
+  image?: string
+  createdAt: number
+}
+
+class LinkedInDB extends Dexie {
+  users!: Table<User>
+  posts!: Table<Post>
+
+  constructor() {
+    super("linkedinClone")
+
+    this.version(1).stores({
+      users: "++id,email",
+      posts: "++id,userId,createdAt"
+    })
+  }
+}
+
+export const db = new LinkedInDB()
