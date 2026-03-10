@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import LoginWelcomeImg from "../../assets/images/welcomeToCommunityLoginPage.png"
+import "../../assets/styles/login.css"
 export default function LoginPage() {
   useEffect(() => {
     document.title = 'Login | LinkedIn By Adarasha Gaihre';
@@ -37,7 +38,7 @@ export default function LoginPage() {
             <p className="text-5xl text-pretty max-w-96">
               Welcome to your professional community
             </p>
-            <button className="bg-blue-600 border-blue-50 min-w-96 p-2 m-6 rounded-full flex flex-row justify-around items-center hover:cursor-pointer hover:bg-blue-700" >
+            <button className="bg-blue-600 border-blue-50 text-blue-100 min-w-96 p-2 m-6 rounded-full flex flex-row justify-around items-center hover:cursor-pointer hover:bg-blue-700" >
               <img
                 src="https://www.svgrepo.com/show/444571/social-google-plus.svg"
                 alt="Social Google Plus SVG File" title="Social Google Plus SVG File"
@@ -78,8 +79,8 @@ export default function LoginPage() {
           </div>
         </div>
 
-        <div className="login-outer-container bg-blue-800 flex flex-row justify-around">
-          <div className="TopContent">
+        <div className="login-outer-container bg-blue-800 flex flex-row justify-around px-14">
+          <div className="TopContent p-6 text-blue-100">
             <h2 className="header">
               Explore top LinkedIn content
             </h2>
@@ -87,7 +88,7 @@ export default function LoginPage() {
               Discover relevant posts and expert insights — curated by topic and in one place.
             </p>
           </div>
-          <div className="TopContent">
+          <div className="TopContent text-blue-100">
             <button className="top-contents">Career</button>
             <button className="top-contents">Productivity</button>
             <button className="top-contents">Finance</button>
