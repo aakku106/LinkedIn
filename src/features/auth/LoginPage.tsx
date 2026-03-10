@@ -7,7 +7,6 @@ export default function LoginPage() {
   }, [])
   return (
     <div className="relative">
-
       <nav className="p-1 bg-blue-700 sticky top-0 " >
         <div className="logo m-6 ">
           <svg
