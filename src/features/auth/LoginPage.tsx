@@ -7,7 +7,7 @@ export default function LoginPage() {
   }, [])
   return (
     <div className="relative">
-      <nav className="p-1 bg-blue-700 sticky top-0 " >
+      <nav className=" nav-bar p-1 sticky top-0 backdrop-blur-sm bg-white-700/50" >
         <div className="logo m-6 ">
           <svg
             viewBox="0 0 800 24"
@@ -32,7 +32,7 @@ export default function LoginPage() {
 
       <section className="flex flex-col justify-between">
 
-        <div className=" p-6 login-outer-container login-section flex flex-row flex-wrap justify-around bg-blue-50">
+        <div className=" p-6 login-outer-container login-section flex flex-row flex-wrap justify-around bg-white-50">
           <div className="login-sections  flex flex-col items-center justify-center-safe">
             <p className="font-medium text-5xl text-pretty max-w-96">
               Welcome to your professional community
@@ -78,12 +78,12 @@ export default function LoginPage() {
           </div>
         </div>
 
-        <div className=" p-12 login-outer-container bg-blue-900 flex flex-row justify-around px-14">
+        <div className=" py-8 login-outer-container bg-blue-900 flex flex-row flex-wrap justify-around px-14">
           <div className="TopContent p-6 text-blue-100">
             <h2 className="header font-extrabold text-5xl">
               Explore top LinkedIn content
             </h2>
-            <p className="body mt-1.5">
+            <p className="body mt-1.5 text-pretty">
               Discover relevant posts and expert insights — curated by topic and in one place.
             </p>
           </div>
@@ -91,7 +91,7 @@ export default function LoginPage() {
             <button className="top-contents">Career</button>
             <button className="top-contents">Productivity</button>
             <button className="top-contents">Finance</button>
-            <button className="top-contents">Soft Skills & Emotional Intiligance</button>
+            <button className="top-contents min-w-80">Soft Skills & Emotional Intiligance</button>
             <button className="top-contents">Project Management</button>
             <button className="top-contents">Education</button>
             <button className="top-contents">Techonology</button>
