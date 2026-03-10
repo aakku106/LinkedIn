@@ -30,17 +30,20 @@ export default function LoginPage() {
         </div>
       </nav>
 
-      <section className="p-1 flex flex-col justify-between">
-        <div className="login-outer-container p-6 login-section flex flex-row flex-wrap justify-between bg-blue-50">
-          <div className="login-sections p-6">
-            <p className="text-5xl text-wrap">
+      <section className="flex flex-col justify-between">
+
+        <div className=" p-6 login-outer-container login-section flex flex-row flex-wrap justify-around bg-blue-50">
+          <div className="login-sections  flex flex-col items-center justify-center-safe">
+            <p className="text-5xl text-pretty max-w-96">
               Welcome to your professional community
             </p>
-            <button className="bg-blue-600 border-blue-50  min-w-96 p-2 m-6 rounded-full flex flex-row justify-around items-center hover:cursor-pointer hover:bg-blue-700" >
+            <button className="bg-blue-600 border-blue-50 min-w-96 p-2 m-6 rounded-full flex flex-row justify-around items-center hover:cursor-pointer hover:bg-blue-700" >
               <img
-                src="https://www.svgrepo.com/show/444571/social-google-plus.svg" alt="Social Google Plus SVG File" title="Social Google Plus SVG File"
+                src="https://www.svgrepo.com/show/444571/social-google-plus.svg"
+                alt="Social Google Plus SVG File" title="Social Google Plus SVG File"
                 width="50"
-                height="50" />
+                height="50"
+              />
               <span className="text-center mr-1">
                 Continue with Google
               </span>
@@ -50,7 +53,7 @@ export default function LoginPage() {
                 Sign in with email
               </span>
             </button>
-            <p className="text-wrap">
+            <p className="text-pretty text-center max-w-52">
               By clicking Continue to join or sign in,
               you agree to LinkedIn’s
               <span className="text-blue-600">
@@ -67,13 +70,36 @@ export default function LoginPage() {
           </div>
           <div className="login-sections">
             <img
+              className="min-w-96"
               height="480"
               width="480"
               alt="Welcome to your professional community"
               src={LoginWelcomeImg} />
           </div>
         </div>
-        <div className="login-outer-container bg-blue-800">2</div>
+
+        <div className="login-outer-container bg-blue-800 flex flex-row justify-around">
+          <div className="TopContent">
+            <h2 className="header">
+              Explore top LinkedIn content
+            </h2>
+            <p className="body mt-1.5">
+              Discover relevant posts and expert insights — curated by topic and in one place.
+            </p>
+          </div>
+          <div className="TopContent">
+            <button className="top-contents">Career</button>
+            <button className="top-contents">Productivity</button>
+            <button className="top-contents">Finance</button>
+            <button className="top-contents">Soft Skills & Emotional Intiligance</button>
+            <button className="top-contents">Project Management</button>
+            <button className="top-contents">Education</button>
+            <button className="top-contents">Techonology</button>
+            <button className="top-contents">Leadership</button>
+            <button className="top-contents">Ecommerce</button>
+            <button className="top-contents">Show All</button>
+          </div>
+        </div>
         <div className="login-outer-container">3</div>
         <div className="login-outer-container">4</div>
         <div className="login-outer-container">5</div>
