@@ -9,7 +9,7 @@ export default function LoginPage() {
             preserveAspectRatio="xMinYMin meet" xmlns="http://www.w3.org/2000/svg"
             focusable="false"
             className="lazy-loaded" aria-busy="false">
-            <g className="inbug" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g className="inbug" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
               <path d="M19.479,0 L1.583,0 C0.727,0 0,0.677 0,1.511 L0,19.488 C0,20.323 0.477,21 1.333,21 L19.229,21 C20.086,21 21,20.323 21,19.488 L21,1.511 C21,0.677 20.336,0 19.479,0" className="bug-text-color" transform="translate(63.000000, 0.000000)"></path>
               <path d="M82.479,0 L64.583,0 C63.727,0 63,0.677 63,1.511 L63,19.488 C63,20.323 63.477,21 64.333,21 L82.229,21 C83.086,21 84,20.323 84,19.488 L84,1.511 C84,0.677 83.336,0 82.479,0 Z M71,8 L73.827,8 L73.827,9.441 L73.858,9.441 C74.289,8.664 75.562,7.875 77.136,7.875 C80.157,7.875 81,9.479 81,12.45 L81,18 L78,18 L78,12.997 C78,11.667 77.469,10.5 76.227,10.5 C74.719,10.5 74,11.521 74,13.197 L74,18 L71,18 L71,8 Z M66,18 L69,18 L69,8 L66,8 L66,18 Z M69.375,4.5 C69.375,5.536 68.536,6.375 67.5,6.375 C66.464,6.375 65.625,5.536 65.625,4.5 C65.625,3.464 66.464,2.625 67.5,2.625 C68.536,2.625 69.375,3.464 69.375,4.5 Z" className="background" fill="currentColor"></path>
             </g>
@@ -25,17 +25,33 @@ export default function LoginPage() {
         </div>
       </nav>
 
-      <section>
-        <div className="login-outer-container"></div>
-        <div className="login-outer-container"></div>
-        <div className="login-outer-container"></div>
-        <div className="login-outer-container"></div>
-        <div className="login-outer-container"></div>
-        <div className="login-outer-container"></div>
-        <div className="login-outer-container"></div>
-        <div className="login-outer-container"></div>
-        <div className="login-outer-container"></div>
-        <div className="login-outer-container"></div>
+      <section className="p-1 flex flex-col justify-between">
+        <div className="login-outer-container login-section flex flex-row justify-between p-2 bg-blue-50">
+          <div className="login-sections">
+            <p>
+              Welcome to your professional community
+            </p>
+            <button className="bg-blue-600 p-2 m-6 rounded-full flex flex-row justify-between items-center" >
+              <img
+                src="https://www.svgrepo.com/show/444571/social-google-plus.svg" alt="Social Google Plus SVG File" title="Social Google Plus SVG File"
+                width="50"
+                height="50" />
+              <span>
+                Continue with Google
+              </span>
+            </button>
+          </div>
+          <div className="login-sections">pic</div>
+        </div>
+        <div className="login-outer-container">2</div>
+        <div className="login-outer-container">3</div>
+        <div className="login-outer-container">4</div>
+        <div className="login-outer-container">5</div>
+        <div className="login-outer-container">6</div>
+        <div className="login-outer-container">7</div>
+        <div className="login-outer-container">8</div>
+        <div className="login-outer-container">9</div>
+        <div className="login-outer-container">10</div>
       </section>
 
     </div>
