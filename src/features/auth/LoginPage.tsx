@@ -78,20 +78,20 @@ export default function LoginPage() {
           </div>
         </div>
 
-        <div className=" py-8 login-outer-container bg-blue-900 flex flex-row flex-wrap justify-around px-14">
+        <div className=" py-8 login-outer-container bg-blue-900 flex flex-row flex-wrap justify-between px-14">
           <div className="TopContent p-6 text-blue-100">
             <h2 className="header font-extrabold text-5xl">
               Explore top LinkedIn content
             </h2>
-            <p className="body mt-1.5 text-pretty">
+            <p className="body mt-2 text-pretty">
               Discover relevant posts and expert insights — curated by topic and in one place.
             </p>
           </div>
-          <div className="TopContent text-blue-100">
+          <div className="TopContent text-blue-100 mt-2">
             <button className="top-contents">Career</button>
             <button className="top-contents">Productivity</button>
             <button className="top-contents">Finance</button>
-            <button className="top-contents min-w-80">Soft Skills & Emotional Intiligance</button>
+            <button className="top-contents min-w-80 ml-2.5 mr-2.6">Soft Skills & Emotional Intiligance</button>
             <button className="top-contents">Project Management</button>
             <button className="top-contents">Education</button>
             <button className="top-contents">Techonology</button>
@@ -100,13 +100,36 @@ export default function LoginPage() {
             <button className="top-contents">Show All</button>
           </div>
         </div>
-        <div className="login-outer-container">3</div>
-        <div className="login-outer-container">4</div>
+        <div className=" py-8 login-outer-container bg-white text-black flex flex-row flex-wrap justify-between px-14">
+          <div className="TopContent p-6 ">
+            <h2 className="header font-extrabold text-5xl">
+              Find the right job or internship for you
+            </h2>
+          </div>
+          <div className="TopContent mt-2">
+            <button className="top-contents">Career</button>
+            <button className="top-contents">Productivity</button>
+            <button className="top-contents">Finance</button>
+            <button className="top-contents min-w-80 ml-1 mr-1">Soft Skills & Emotional Intiligance</button>
+            <button className="top-contents">Project Management</button>
+            <button className="top-contents">Education</button>
+            <button className="top-contents">Techonology</button>
+            <button className="top-contents">Leadership</button>
+            <button className="top-contents">Ecommerce</button>
+            <button className="top-contents">Show All</button>
+          </div>
+        </div>
+
+        <div className="login-outer-container p-24 bg-blue-200">4</div>
         <div className="login-outer-container">5</div>
         <div className="login-outer-container">6</div>
         <div className="login-outer-container">7</div>
         <div className="login-outer-container">8</div>
-        <div className="login-outer-container">9</div>
+        <div className="login-outer-container">
+          <h2 className="header font-semibold text-5xl px-14">
+            Join your colleagues, classmates, and friends on LinkedIn
+          </h2>
+        </div>
         <div className="login-outer-container">10</div>
       </section>
 
