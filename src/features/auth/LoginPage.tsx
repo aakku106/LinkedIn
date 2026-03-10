@@ -6,9 +6,9 @@ export default function LoginPage() {
     document.title = 'Login | LinkedIn By Adarasha Gaihre';
   }, [])
   return (
-    <div>
+    <div className="relative">
 
-      <nav className="p-1 bg-blue-700" >
+      <nav className="p-1 bg-blue-700 sticky top-0 " >
         <div className="logo m-6 ">
           <svg
             viewBox="0 0 800 24"
@@ -35,7 +35,7 @@ export default function LoginPage() {
 
         <div className=" p-6 login-outer-container login-section flex flex-row flex-wrap justify-around bg-blue-50">
           <div className="login-sections  flex flex-col items-center justify-center-safe">
-            <p className="text-5xl text-pretty max-w-96">
+            <p className="font-medium text-5xl text-pretty max-w-96">
               Welcome to your professional community
             </p>
             <button className="bg-blue-600 border-blue-50 text-blue-100 min-w-96 p-2 m-6 rounded-full flex flex-row justify-around items-center hover:cursor-pointer hover:bg-blue-700" >
@@ -79,9 +79,9 @@ export default function LoginPage() {
           </div>
         </div>
 
-        <div className="login-outer-container bg-blue-800 flex flex-row justify-around px-14">
+        <div className=" p-12 login-outer-container bg-blue-900 flex flex-row justify-around px-14">
           <div className="TopContent p-6 text-blue-100">
-            <h2 className="header">
+            <h2 className="header font-extrabold text-5xl">
               Explore top LinkedIn content
             </h2>
             <p className="body mt-1.5">

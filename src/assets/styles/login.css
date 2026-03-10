@@ -4,11 +4,12 @@
   border-radius: 50px;
   margin: 1rem;
   transition: all 4ms ease-in-out;
+  font-weight: 600;
 
   &:hover {
     transform: scale(1.1);
     cursor: pointer;
     background-color: white;
-    color: blue;
+    color: oklch(37.9% 0.146 265.522);
   }
 }
