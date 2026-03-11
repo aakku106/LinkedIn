@@ -3,7 +3,7 @@ import "../assets/styles/navBar.css"
 
 export default function Navbar() {
   return (
-    <nav className=" sticky top-0 backdrop-blur-sm navBar flex justify-between bg-white/90 dark:bg-black/90 text-black dark:text-white text-nowrap items-center-safe " >
+    <nav className=" sticky top-0 backdrop-blur-sm navBar flex justify-between bg-white/90 dark:bg-black/90 text-black dark:text-white text-nowrap items-center-safe z-40" >
 
 
       <NavLink

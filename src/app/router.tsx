@@ -19,7 +19,7 @@ const router = createBrowserRouter([
       </ProtectedRoute>
     ),
     children: [
-      { index: true, element: <Navigate to="/feed" replace /> }, // default landing page <Home feed>
+      { index: true, element: <Navigate to="/feed" replace /> }, // default landing page <Home..feed>
       { path: "feed", element: <FeedPage /> },
       { path: "network", element: <div>Network Page</div> },
       { path: "jobs", element: <div>Jobs Page</div> },
