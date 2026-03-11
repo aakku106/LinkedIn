@@ -7,10 +7,12 @@ export default function FeedPage() {
   if (!posts) return <p>Loading...</p>
 
   return (
-    <div className="flex feed-page flex-row px-56 mt-4 relative">
+    <div className=" feed-page flex flex-row px-56 mt-4 relative">
 
-      <div className=" left-feed fixed mr-6 p-6 bg-amber-600">left</div>
-      <div className=" center-feed mr-6 p-6 ">
+      <div className=" left-feed fixed size-52 left-32 mr-6 p-6 bg-amber-600">
+        left
+      </div>
+      <div className=" center-feed  min-w-136 max-w[34rem]  ml-44 ">
 
         {posts.map((post) => (
           <div key={post.id} className="bg-white mt-4 ">
@@ -19,7 +21,7 @@ export default function FeedPage() {
         ))}
 
       </div>
-      <div className="right-feed fixed p-6 bg-blue-800">
+      <div className="right-feed fixed  size-64 right-48 p-6 bg-blue-800">
         Right
       </div>
     </div>

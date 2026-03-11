@@ -1,10 +1,4 @@
 .feed-page {
-
-  & .center-feed {
-    width: 80%;
-  }
-
-
   & div {
     border-radius: 6px;
   }
