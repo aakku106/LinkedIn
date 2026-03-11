@@ -8,12 +8,12 @@ export async function seedDatabase() {
       name: "Adarasha Gaihre",
       email: "aakku@demo.com",
       password: "1234",
-      avatar: "https://i.pravatar.cc/150"
+      avatar: ""
     })
 
-    const fakePosts = Array.from({ length: 10 }).map((_, i) => ({
+    const fakePosts = Array.from({ length: 20 }).map((_, i) => ({
       userId,
-      content: `Demo post #${i + 1} from the LinkedIn clone`,
+      content: `Demo post #${i + 1} Try try try ...`,
       image: `https://picsum.photos/seed/${i}/600/400`,
       createdAt: Date.now() - i * 1000000
     }))
