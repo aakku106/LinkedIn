@@ -3,9 +3,9 @@ import "../assets/styles/navBar.css"
 
 export default function Navbar() {
   return (
-    <div>
+    <div className="relative" >
       <nav
-        className="navBar flex justify-between bg-white dark:bg-black text-black dark:text-white text-nowrap items-center-safe" >
+        className="navBar flex justify-between bg-white dark:bg-black text-black dark:text-white text-nowrap items-center-safe  sticky top-0" >
 
         <div className="logo-container order-first flex flex-col items-center-safe hover:cursor-pointer">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 34" data-supported-dps="34x34" fill="currentColor"
@@ -59,13 +59,18 @@ export default function Navbar() {
             <span>Messaging</span>
           </NavLink>
 
-          <div className="notifications m-6 flex flex-col items-center-safe hover:cursor-pointer">
+
+
+          <NavLink to="/notifications" className={({ isActive }) => `notifications m-6 flex flex-col items-center-safe hover:cursor-pointer ${isActive ? "active" : "hover:text-blue-700"}`}>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="currentColor" className="mercado-match" width="24" height="24" focusable="false">
               <path d="M22 19h-8.28a2 2 0 11-3.44 0H2v-1a4.52 4.52 0 011.17-2.83l1-1.17h15.7l1 1.17A4.42 4.42 0 0122 18zM18.21 7.44A6.27 6.27 0 0012 2a6.27 6.27 0 00-6.21 5.44L5 13h14z"></path>
             </svg>
             <span>Notifications</span>
-          </div>
+          </NavLink>
+
         </div>
+
+
 
         <div className="profile">
           <img
