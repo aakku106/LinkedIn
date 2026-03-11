@@ -7,9 +7,13 @@ interface AuthState {
   isLoggedIn: () => boolean
 }
 
-export const useAuthStore = create<AuthState>((set, get) => ({
-  userId: null,
-  login: (id) => set({ userId: id }),
-  logout: () => set({ userId: null }),
-  isLoggedIn: () => get().userId !== null
-}))
+export const useAuthStore = create(
+  persist(
+    (set) => ({
+      userId: null,
+      login: (id: number) => set({ userId: id }),
+      logout: () => set({ userId: null })
+    }),
+    { name: "linkedin-auth" }
+  )
+)

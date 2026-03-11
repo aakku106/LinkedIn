@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import LoginWelcomeImg from "../../assets/images/welcomeToCommunityLoginPage.png"
 import "../../assets/styles/login.css"
+import LoginWithEmail from "../../components/LoginWithEmail";
+import { Navigate } from "react-router-dom";
+import { useAuthStore } from "./authStore";
 export default function LoginPage() {
   const [signInOption, setSignInOption] = useState("none")
   useEffect(() => {
@@ -9,6 +12,19 @@ export default function LoginPage() {
   useEffect(() => {
     document.title = 'Login | LinkedIn By Adarasha Gaihre';
   }, [])
+
+  const userId = useAuthStore((s) => s.userId)
+
+  if (userId) return <Navigate to="/feed" replace />
+
+
+  if (signInOption === "email") {
+    return (
+      <LoginWithEmail />
+    )
+  }
+
+
   return (
     <div className="relative">
       <nav className=" nav-bar p-1 sticky top-0 backdrop-blur-sm bg-white-700/50" >
