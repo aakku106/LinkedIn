@@ -1,5 +1,9 @@
+import { ProfileTop } from "../../components/ProfileTop";
+
 export default function ProfilePage() {
   return (
-    <div></div>
+    <div className="px-80">
+      <ProfileTop />
+    </div>
   )
 }
