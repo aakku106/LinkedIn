@@ -1,6 +1,5 @@
 import "../features/feed/usePosts"
 import { Posts } from "./Posts"
-import coverPic from "../assets/images/profile-coverPic.jpeg"
 
 export default function Feed() {
 
@@ -9,7 +8,6 @@ export default function Feed() {
 
       <div className=" left-feed fixed min-w-52 left-32 mr-6 p-6 ">
         left
-        <img src={coverPic} alt="cover-pic" />
 
         <div className="profile bg-black/95 dark:bg-blue-100">
           fffff
