@@ -22,23 +22,21 @@ export const ProfileTop = () => {
       </div>
 
       <div className="px-14 py-3">
-        <div>
-          <div className="flex justify-between flex-wrap">
-            <h1 className=" text-2xl font-bold font-mono">Adarasha Gaihre</h1>
-            <div className="bio_college flex items-center-safe gap-4 flex-nowrap text-nowrap">
-              <img
-                src={nepathyaColzLogo}
-                height="24"
-                width="34"
-                className="bio_clzLogo"
-              />
-              <span>
-                Nepathya College
-              </span>
-            </div>
+        <div className="flex justify-between flex-wrap">
+          <h1 className=" text-2xl font-bold font-mono">Adarasha Gaihre</h1>
+          <div className="bio_college flex items-center-safe gap-4 flex-nowrap text-nowrap">
+            <img
+              src={nepathyaColzLogo}
+              height="24"
+              width="34"
+              className="bio_clzLogo"
+            />
+            <span>
+              Nepathya College
+            </span>
           </div>
         </div>
-        <div>Student At Nepathya College</div>
+        <div className="mt-2">Student At Nepathya College</div>
         <div className="flex gap-5">
           <span>
             Rupandehi District, Lumbiniī, Nepal
@@ -47,12 +45,12 @@ export const ProfileTop = () => {
             Contact info
           </li>
         </div>
-        <div className="connections">
+        <div className="connections mt-3">
           <span className="text-blue-400 font-mono">83 Connections</span>
         </div>
       </div>
 
-      <div className="px-14 ">
+      <div className="px-12 ">
         <button className=" bg-blue-500">Open to</button>
         <button> Add section</button>
         <button>Enhance profile</button>
