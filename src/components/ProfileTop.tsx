@@ -73,7 +73,7 @@ rounded-2xl text-nowrap relative `}>
           </button>
         </div>
 
-        <div>
+        <div className="flex justify-between">
 
           <div className="flex flex-col">
             <div>Opean to work</div>
