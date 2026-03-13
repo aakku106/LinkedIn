@@ -2,7 +2,7 @@ import { ProfileTop } from "../../components/ProfileTop";
 
 export default function ProfilePage() {
   return (
-    <section className="px-80 mt-4  font-serif">
+    <section className="flex flex-row justify-center-safe mt-4 font-sans">
       <ProfileTop />
     </section>
   )
