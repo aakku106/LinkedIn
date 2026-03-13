@@ -59,11 +59,29 @@ rounded-2xl text-nowrap relative `}>
               border: "1px solid white"
             }}
           >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" data-supported-dps="16x16" viewBox="0 0 16 16" data-token-id="342" width="16" height="16"
-              role="img" aria-hidden="true"><path d="M3 9.5A1.5 1.5 0 1 1 4.5 8 1.5 1.5 0 0 1 3 9.5M11.5 8A1.5 1.5 0 1 0 13 6.5 1.5 1.5 0 0 0 11.5 8m-5 0A1.5 1.5 0 1 0 8 6.5 1.5 1.5 0 0 0 6.5 8"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              data-supported-dps="16x16"
+              viewBox="0 0 16 16"
+              data-token-id="342" width="16" height="16"
+              role="img" aria-hidden="true"
+            >
+              <path
+                d="M3 9.5A1.5 1.5 0 1 1 4.5 8 1.5 1.5 0 0 1 3 9.5M11.5 8A1.5 1.5 0 1 0 13 6.5 1.5 1.5 0 0 0 11.5 8m-5 0A1.5 1.5 0 1 0 8 6.5 1.5 1.5 0 0 0 6.5 8"
+              />
+            </svg>
           </button>
         </div>
 
+        <div>
+
+          <div className="flex flex-col">
+            <div>Opean to work</div>
+            <div>Web Developer, Js Developer, and ... </div>
+            <a className="text-sky-500" >Show details</a>
+          </div>
+          <div>Opean to Voluntire</div>
+        </div>
       </div>
 
 
