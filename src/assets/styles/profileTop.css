@@ -2,4 +2,5 @@ button {
   padding: .4rem;
   border: 1px solid skyblue;
   border-radius: 12rem;
+  margin-left: .4rem;
 }
