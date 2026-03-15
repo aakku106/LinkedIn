@@ -5,27 +5,28 @@ import "../assets/styles/profileTop.css";
 export const ProfileTop = () => {
   return (
     <div
-      className={`profile-container  flex flex-col 
-bg-blue-50 dark:bg-slate-400/20 backdrop-blur-sm dark:text-blue-200 
-rounded-2xl  relative text-nowrap `}>
-      <div className="absolute sm:top-22 top-16 left-[5%] sm:border-4 border-3 border-white dark:border-black rounded-full">
-        <img
-          src={profilePic}
-          className="rounded-full sm:w-40 w-30 aspect-square  "
-          alt="Adarasha Gaihre profile picture"
-        />
-      </div>
-      <div>
+      className="profile-container flex flex-col
+bg-blue-50 dark:bg-slate-400/20 backdrop-blur-sm dark:text-blue-200
+rounded-2xl w-full">
+      {/* Cover image + avatar — avatar uses translate-y-1/2 to always straddle the edge */}
+      <div className="relative">
         <img
           src={coverPic}
-          className=" rounded-t-lg w-3xl aspect-16/4"
+          className="w-full rounded-t-2xl aspect-4/1 object-cover"
           alt="Adarasha Gaihre Cover Picture"
         />
+        <div className="absolute bottom-0 left-4 sm:left-8 translate-y-1/2 sm:border-4 border-3 border-white dark:border-black rounded-full">
+          <img
+            src={profilePic}
+            className="rounded-full w-24 sm:w-36 aspect-square object-cover"
+            alt="Adarasha Gaihre profile picture"
+          />
+        </div>
       </div>
 
-      <div className="px-3 sm:pl-10 py-3 sm:pr-8 pt-[10%]  sm:pt-[12%]">
-        <div className="flex justify-between flex-wrap">
-          <h1 className=" text-2xl font-bold font-mono">Adarasha Gaihre</h1>
+      <div className="px-4 sm:px-8 pb-4 pt-14 sm:pt-20">
+        <div className="flex justify-between flex-wrap gap-2">
+          <h1 className="text-2xl font-bold font-mono">Adarasha Gaihre</h1>
           <div className="flex flex-wrap items-center-safe gap-4">
             <img
               src={nepathyaColzLogo}
@@ -37,7 +38,7 @@ rounded-2xl  relative text-nowrap `}>
           </div>
         </div>
         <div className="mt-2">Student At Nepathya College</div>
-        <div className="flex flex-row flex-wrap gap-5">
+        <div className="flex flex-row flex-wrap gap-4 mt-1">
           <span>Rupandehi District, Lumbiniī, Nepal</span>
           <li className="text-blue-400 hover:cursor-pointer">Contact info</li>
         </div>
@@ -47,9 +48,9 @@ rounded-2xl  relative text-nowrap `}>
           </a>
         </div>
 
-        <div className="mt-4 pl-0">
-          <button className=" bg-sky-600 hover:bg-sky-700">Open to</button>
-          <button> Add section</button>
+        <div className="mt-4 flex flex-wrap gap-2">
+          <button className="bg-sky-600 hover:bg-sky-700">Open to</button>
+          <button>Add section</button>
           <button>Enhance profile</button>
           <button
             style={{
@@ -70,13 +71,13 @@ rounded-2xl  relative text-nowrap `}>
           </button>
         </div>
 
-        <div className="flex flex-wrap justify-between items-center">
-          <div className="flex flex-col rounded-2xl  p-4 bg-sky-100/10 mt-4 hover:cursor-pointer hover:bg-sky-100/14">
+        <div className="flex flex-col sm:flex-row gap-4 mt-4">
+          <div className="flex-1 flex flex-col rounded-2xl p-4 bg-sky-100/10 hover:cursor-pointer hover:bg-sky-100/14">
             <div>Opean to work</div>
             <div>Web Developer, Js Developer, and ... </div>
             <a className="text-sky-500 hover:text-sky-600">Show details</a>
           </div>
-          <div className="flex flex-col rounded-2xl  p-4 bg-sky-100/10 mt-4 hover:cursor-pointer hover:bg-sky-100/14">
+          <div className="flex-1 flex flex-col rounded-2xl p-4 bg-sky-100/10 hover:cursor-pointer hover:bg-sky-100/14">
             <div>Opean to Voluntire</div>
             <div>Education, Community import</div>
             <a className="text-sky-500 hover:text-sky-600">Show details</a>
