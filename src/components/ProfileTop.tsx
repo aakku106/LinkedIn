@@ -73,12 +73,12 @@ rounded-2xl w-full">
 
         <div className="flex flex-col sm:flex-row gap-4 mt-4">
           <div className="flex-1 flex flex-col rounded-2xl p-4 bg-sky-100/10 hover:cursor-pointer hover:bg-sky-100/14">
-            <div>Opean to work</div>
+            <div>Open to work</div>
             <div>Web Developer, Js Developer, and ... </div>
             <a className="text-sky-500 hover:text-sky-600">Show details</a>
           </div>
           <div className="flex-1 flex flex-col rounded-2xl p-4 bg-sky-100/10 hover:cursor-pointer hover:bg-sky-100/14">
-            <div>Opean to Voluntire</div>
+            <div>Open to Volunteer</div>
             <div>Education, Community import</div>
             <a className="text-sky-500 hover:text-sky-600">Show details</a>
           </div>
