@@ -6,7 +6,7 @@ export const Posts = () => {
 
   if (!posts) {
     return (
-      <div className="rounded-2xl border border-black/8 bg-white p-6 text-sm text-slate-500 shadow-sm dark:border-white/10 dark:bg-slate-900 dark:text-slate-400">
+      <div className="rounded-2xl border border-gray-200 bg-white p-6 text-sm text-gray-500 shadow-sm dark:border-gray-700 dark:bg-gray-900 dark:text-gray-400">
         Loading feed...
       </div>
     );
@@ -14,7 +14,7 @@ export const Posts = () => {
 
   if (posts.length === 0) {
     return (
-      <div className="rounded-2xl border border-black/8 bg-white p-6 text-sm text-slate-500 shadow-sm dark:border-white/10 dark:bg-slate-900 dark:text-slate-400">
+      <div className="rounded-2xl border border-gray-200 bg-white p-6 text-sm text-gray-500 shadow-sm dark:border-gray-700 dark:bg-gray-900 dark:text-gray-400">
         No posts yet. Start with your first update.
       </div>
     );
