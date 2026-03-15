@@ -6,7 +6,7 @@ export const ProfileTop = () => {
   return (
     <div
       className="profile-container flex flex-col
-bg-blue-50 dark:bg-slate-400/20 backdrop-blur-sm dark:text-blue-200
+bg-white dark:bg-gray-950 dark:text-white
 rounded-2xl w-full">
       <div className="relative">
         <img
@@ -25,7 +25,9 @@ rounded-2xl w-full">
 
       <div className="px-4 sm:px-8 pb-4 pt-14 sm:pt-20">
         <div className="flex justify-between flex-wrap gap-2">
-          <h1 className="text-2xl font-bold font-mono">Adarasha Gaihre</h1>
+          <h1 className="text-2xl font-bold font-mono text-black dark:text-white">
+            Adarasha Gaihre
+          </h1>
           <div className="flex flex-wrap items-center-safe gap-4">
             <img
               src={nepathyaColzLogo}
@@ -33,24 +35,34 @@ rounded-2xl w-full">
               width="34"
               className="bio_clzLogo"
             />
-            <span>Nepathya College</span>
+            <span className="text-black dark:text-white">Nepathya College</span>
           </div>
         </div>
-        <div className="mt-2">Student At Nepathya College</div>
+        <div className="mt-2 text-black dark:text-white">
+          Student At Nepathya College
+        </div>
         <div className="flex flex-row flex-wrap gap-4 mt-1">
-          <span>Rupandehi District, Lumbiniī, Nepal</span>
-          <li className="text-blue-400 hover:cursor-pointer">Contact info</li>
+          <span className="text-black dark:text-white">
+            Rupandehi District, Lumbiniī, Nepal
+          </span>
+          <li className="text-blue-800 dark:text-blue-400 hover:cursor-pointer">
+            Contact info
+          </li>
         </div>
         <div className="connections mt-3">
-          <a className="text-blue-400 font-mono hover:cursor-pointer">
+          <a className="text-blue-800 dark:text-blue-400 font-mono hover:cursor-pointer">
             86 Connections
           </a>
         </div>
 
         <div className="mt-4 flex flex-wrap gap-2">
-          <button className="bg-sky-600 hover:bg-sky-700">Open to</button>
-          <button>Add section</button>
-          <button>Enhance profile</button>
+          <button className="bg-blue-600 hover:bg-blue-700 text-white">
+            Open to
+          </button>
+          <button className="text-black dark:text-white">Add section</button>
+          <button className="text-black dark:text-white">
+            Enhance profile
+          </button>
           <button
             style={{
               border: "1px solid white",
@@ -71,15 +83,23 @@ rounded-2xl w-full">
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4 mt-4">
-          <div className="flex-1 flex flex-col rounded-2xl p-4 bg-sky-100/10 hover:cursor-pointer hover:bg-sky-100/14">
-            <div>Open to work</div>
-            <div>Web Developer, Js Developer, and ... </div>
-            <a className="text-sky-500 hover:text-sky-600">Show details</a>
+          <div className="flex-1 flex flex-col rounded-2xl p-4 bg-gray-100 dark:bg-gray-900 hover:cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-800">
+            <div className="text-black dark:text-white">Open to work</div>
+            <div className="text-black dark:text-white">
+              Web Developer, Js Developer, and ...{" "}
+            </div>
+            <a className="text-blue-800 dark:text-blue-400 hover:text-blue-900 dark:hover:text-blue-300">
+              Show details
+            </a>
           </div>
-          <div className="flex-1 flex flex-col rounded-2xl p-4 bg-sky-100/10 hover:cursor-pointer hover:bg-sky-100/14">
-            <div>Open to Volunteer</div>
-            <div>Education, Community import</div>
-            <a className="text-sky-500 hover:text-sky-600">Show details</a>
+          <div className="flex-1 flex flex-col rounded-2xl p-4 bg-gray-100 dark:bg-gray-900 hover:cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-800">
+            <div className="text-black dark:text-white">Open to Volunteer</div>
+            <div className="text-black dark:text-white">
+              Education, Community import
+            </div>
+            <a className="text-blue-800 dark:text-blue-400 hover:text-blue-900 dark:hover:text-blue-300">
+              Show details
+            </a>
           </div>
         </div>
       </div>
