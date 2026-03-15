@@ -2,8 +2,10 @@ import { ProfileTop } from "../../components/ProfileTop";
 
 export default function ProfilePage() {
   return (
-    <section className="flex flex-row justify-center-safe mt-4 font-sans">
-      <ProfileTop />
+    <section className="w-full px-2 sm:px-20 md:px-30 lg:px-70 py-4">
+      <div className="mx-auto w-full max-w-5xl font-sans">
+        <ProfileTop />
+      </div>
     </section>
-  )
+  );
 }

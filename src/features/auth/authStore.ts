@@ -1,11 +1,11 @@
-import { create } from "zustand"
-import { persist } from "zustand/middleware"
+import { create } from "zustand";
+import { persist } from "zustand/middleware";
 
 interface AuthState {
-  userId: number | null
-  login: (id: number) => void
-  logout: () => void
-  isLoggedIn: () => boolean
+  userId: number | null;
+  login: (id: number) => void;
+  logout: () => void;
+  isLoggedIn: () => boolean;
 }
 
 export const useAuthStore = create<AuthState>()(
@@ -17,10 +17,10 @@ export const useAuthStore = create<AuthState>()(
 
       logout: () => set({ userId: null }),
 
-      isLoggedIn: () => get().userId !== null
+      isLoggedIn: () => get().userId !== null,
     }),
     {
-      name: "linkedin-auth"
-    }
-  )
-)
+      name: "linkedin-auth",
+    },
+  ),
+);

@@ -8,7 +8,6 @@ export const ProfileTop = () => {
       className="profile-container flex flex-col
 bg-blue-50 dark:bg-slate-400/20 backdrop-blur-sm dark:text-blue-200
 rounded-2xl w-full">
-      {/* Cover image + avatar — avatar uses translate-y-1/2 to always straddle the edge */}
       <div className="relative">
         <img
           src={coverPic}
