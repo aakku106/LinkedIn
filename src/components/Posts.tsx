@@ -14,7 +14,7 @@ export const Posts = () => {
 
   if (posts.length === 0) {
     return (
-      <div className="rounded-2xl border border-gray-200 bg-white p-6 text-sm text-gray-500 shadow-sm dark:border-gray-700 dark:bg-gray-900 dark:text-gray-400">
+      <div className="rounded-2xl border border-gray-200 bg-white p-6 text-sm text-gray-600 shadow-sm dark:border-gray-700 dark:bg-gray-950 dark:text-gray-400">
         No posts yet. Start with your first update.
       </div>
     );

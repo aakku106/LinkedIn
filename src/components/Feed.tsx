@@ -21,33 +21,33 @@ export default function Feed() {
       <aside className="order-2 self-start space-y-4 xl:col-start-1 xl:row-start-1 xl:sticky xl:top-24">
         <ProfileTop />
 
-        <section className="rounded-2xl border border-black/8 bg-white p-4 text-gray-900 shadow-sm dark:border-white/10 dark:bg-gray-900 dark:text-gray-100">
+        <section className="rounded-2xl border border-gray-200 bg-white p-4 text-black shadow-sm dark:border-gray-700 dark:bg-gray-950 dark:text-white">
           <div className="space-y-3">
             <a
               href="#"
-              className="flex items-center justify-between rounded-lg px-2 py-2 hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer">
+              className="flex items-center justify-between rounded-lg px-2 py-2 hover:bg-gray-100 dark:hover:bg-gray-900 cursor-pointer">
               <div>
                 <p className="text-sm font-semibold">Profile viewers</p>
               </div>
-              <p className="text-sm font-bold text-gray-700 dark:text-gray-300">
+              <p className="text-sm font-bold text-gray-600 dark:text-gray-300">
                 28
               </p>
             </a>
             <a
               href="#"
-              className="flex items-center justify-between rounded-lg px-2 py-2 hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer">
+              className="flex items-center justify-between rounded-lg px-2 py-2 hover:bg-gray-100 dark:hover:bg-gray-900 cursor-pointer">
               <div>
                 <p className="text-sm font-semibold">Post impressions</p>
               </div>
-              <p className="text-sm font-bold text-gray-700 dark:text-gray-300">
+              <p className="text-sm font-bold text-gray-600 dark:text-gray-300">
                 5
               </p>
             </a>
           </div>
         </section>
 
-        <section className="rounded-2xl border border-black/8 bg-white p-4 text-gray-900 shadow-sm dark:border-white/10 dark:bg-gray-900 dark:text-gray-100">
-          <p className="text-xs text-gray-500 dark:text-gray-400">
+        <section className="rounded-2xl border border-gray-200 bg-white p-4 text-black shadow-sm dark:border-gray-700 dark:bg-gray-950 dark:text-white">
+          <p className="text-xs text-gray-600 dark:text-gray-400">
             Access exclusive tools & insights
           </p>
           <div className="mt-3 flex items-center gap-3 font-medium">
@@ -71,7 +71,7 @@ export default function Feed() {
           </div>
         </section>
 
-        <section className="rounded-2xl border border-black/8 bg-white p-3 text-gray-900 shadow-sm dark:border-white/10 dark:bg-gray-900 dark:text-gray-100">
+        <section className="rounded-2xl border border-gray-200 bg-white p-3 text-black shadow-sm dark:border-gray-700 dark:bg-gray-950 dark:text-white">
           <button
             type="button"
             className="flex w-full items-center gap-3 rounded-xl px-3 py-2 text-left text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-800">
@@ -156,7 +156,7 @@ export default function Feed() {
             await createPost(content, 1);
             setDraft("");
           }}
-          className="rounded-2xl border border-black/8 bg-white p-4 text-gray-900 shadow-sm dark:border-white/10 dark:bg-gray-900 dark:text-gray-100">
+          className="rounded-2xl border border-gray-200 bg-white p-4 text-black shadow-sm dark:border-gray-700 dark:bg-gray-950 dark:text-white">
           <div className="flex items-start gap-3">
             <img
               src={profilePic}
@@ -168,17 +168,17 @@ export default function Feed() {
               onChange={(event) => setDraft(event.target.value)}
               rows={2}
               placeholder="Start a post"
-              className="min-h-24 flex-1 resize-none rounded-3xl border border-gray-300 px-4 py-3 text-sm outline-none placeholder:text-gray-500 hover:bg-gray-50 focus:border-gray-400 dark:border-gray-700 dark:bg-gray-950 dark:placeholder:text-gray-400 dark:hover:bg-gray-800"
+              className="min-h-24 flex-1 resize-none rounded-3xl border border-gray-300 px-4 py-3 text-sm outline-none placeholder:text-gray-600 hover:bg-gray-50 focus:border-gray-400 dark:border-gray-600 dark:bg-gray-900 dark:placeholder:text-gray-400 dark:hover:bg-gray-800"
             />
           </div>
 
           <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
-            <div className="flex flex-wrap gap-2 text-sm font-medium text-gray-600 dark:text-gray-300">
+            <div className="flex flex-wrap gap-2 text-sm font-medium text-gray-700 dark:text-gray-300">
               {["Video", "Photo", "Write article"].map((item) => (
                 <button
                   key={item}
                   type="button"
-                  className="flex items-center gap-2 rounded-full px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
+                  className="flex items-center gap-2 rounded-full px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-900">
                   <IconSlot />
                   <span>{item}</span>
                 </button>
@@ -194,8 +194,8 @@ export default function Feed() {
           </div>
         </form>
 
-        <div className="flex items-center gap-3 px-1 text-sm text-gray-500 dark:text-gray-400">
-          <div className="h-px flex-1 bg-gray-300 dark:bg-gray-700" />
+        <div className="flex items-center gap-3 px-1 text-sm text-gray-600 dark:text-gray-400">
+          <div className="h-px flex-1 bg-gray-200 dark:bg-gray-700" />
           <span>Sort by: Top</span>
         </div>
 
@@ -203,7 +203,7 @@ export default function Feed() {
       </section>
 
       <aside className="order-3 self-start space-y-4 xl:col-start-3 xl:row-start-1 xl:sticky xl:top-24">
-        <section className="rounded-2xl border border-black/8 bg-white p-4 text-gray-900 shadow-sm dark:border-white/10 dark:bg-gray-900 dark:text-gray-100">
+        <section className="rounded-2xl border border-gray-200 bg-white p-4 text-black shadow-sm dark:border-gray-700 dark:bg-gray-950 dark:text-white">
           <div className="flex items-center justify-between gap-3">
             <h2 className="text-base font-semibold">Add to your feed</h2>
             <IconSlot />
@@ -216,17 +216,17 @@ export default function Feed() {
               "Campus Community",
             ].map((name, index) => (
               <div key={name} className="flex items-start gap-3">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gray-200 text-xs font-semibold text-gray-700 dark:bg-gray-800 dark:text-gray-200">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gray-100 text-xs font-semibold text-gray-700 dark:bg-gray-800 dark:text-gray-300">
                   {index + 1}
                 </div>
                 <div className="min-w-0 flex-1">
                   <p className="truncate text-sm font-medium">{name}</p>
-                  <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
+                  <p className="mt-1 text-xs text-gray-600 dark:text-gray-400">
                     Suggested for you
                   </p>
                   <button
                     type="button"
-                    className="mt-3 inline-flex items-center gap-2 rounded-full border border-gray-300 px-3 py-1.5 text-sm font-medium hover:bg-gray-100 dark:border-gray-700 dark:hover:bg-gray-800">
+                    className="mt-3 inline-flex items-center gap-2 rounded-full border border-gray-300 px-3 py-1.5 text-sm font-medium hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-900">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 16 16"
@@ -247,7 +247,7 @@ export default function Feed() {
           </div>
         </section>
 
-        <section className="rounded-2xl border border-black/8 bg-white p-4 text-gray-900 shadow-sm dark:border-white/10 dark:bg-gray-900 dark:text-gray-100">
+        <section className="rounded-2xl border border-gray-200 bg-white p-4 text-black shadow-sm dark:border-gray-700 dark:bg-gray-950 dark:text-white">
           <h2 className="text-base font-semibold">Trending now</h2>
           <div className="mt-4 space-y-3">
             {[
@@ -258,8 +258,8 @@ export default function Feed() {
               <button
                 key={topic}
                 type="button"
-                className="block w-full rounded-xl px-2 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-800">
-                <p className="text-xs text-gray-500 dark:text-gray-400">
+                className="block w-full rounded-xl px-2 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-900">
+                <p className="text-xs text-gray-600 dark:text-gray-400">
                   {index + 1} in your network
                 </p>
                 <p className="mt-1 text-sm font-medium">{topic}</p>

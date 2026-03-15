@@ -22,7 +22,7 @@ export function PostCard({
   });
 
   return (
-    <article className="overflow-hidden rounded-2xl border border-gray-200 bg-white text-gray-900 shadow-sm dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100">
+    <article className="overflow-hidden rounded-2xl border border-gray-200 bg-white text-black shadow-sm dark:border-gray-700 dark:bg-gray-950 dark:text-white">
       <div className="flex items-start gap-3 px-4 pt-4">
         <img
           src={profilePic}
@@ -34,10 +34,10 @@ export function PostCard({
           <div className="flex items-start justify-between gap-3">
             <div className="min-w-0">
               <p className="truncate text-sm font-semibold">Adarasha Gaihre</p>
-              <p className="truncate text-xs text-gray-500 dark:text-gray-400">
+              <p className="truncate text-xs text-gray-600 dark:text-gray-400">
                 Javascript Developer at Nepathya College
               </p>
-              <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
+              <p className="mt-1 text-xs text-gray-600 dark:text-gray-400">
                 {postTime}
               </p>
             </div>
@@ -69,7 +69,7 @@ export function PostCard({
           <button
             key={label}
             type="button"
-            className="flex items-center justify-center gap-2 rounded-xl px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
+            className="flex items-center justify-center gap-2 rounded-xl px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-900">
             <ActionPlaceholder />
             <span>{label}</span>
           </button>
