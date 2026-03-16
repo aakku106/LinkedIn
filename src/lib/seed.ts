@@ -6,7 +6,7 @@ export async function seedDatabase() {
   if (userCount === 0) {
     const userId = await db.users.add({
       name: "Adarasha Gaihre",
-      email: "aakku@demo.com",
+      email: "aakku@aakku.com",
       password: "1234",
       avatar: "",
     });
