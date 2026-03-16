@@ -22,6 +22,7 @@ export const ProfileTop = () => {
       }
     };
 
+    
     loadUser();
 
     return () => {
