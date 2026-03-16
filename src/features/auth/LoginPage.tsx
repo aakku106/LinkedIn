@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Navigate } from "react-router-dom";
 import LoginWelcomeImg from "../../assets/images/welcomeToCommunityLoginPage.png";
 import "../../assets/styles/login.css";
 import LoginWithEmail from "../../components/LoginWithEmail";
@@ -12,7 +13,7 @@ export default function LoginPage() {
 
   const userId = useAuthStore((s) => s.userId);
 
-  if (userId) navigate("/feed");
+  if (userId) return <Navigate to="/feed" replace />;
 
   if (signInOption === "email") return <LoginWithEmail />;
 
