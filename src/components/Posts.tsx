@@ -1,7 +1,12 @@
+import type { User } from "../lib/db";
 import { usePosts } from "../features/feed/usePosts";
 import { PostCard } from "./PostCard";
 
-export const Posts = () => {
+interface PostsProps {
+  user: User;
+}
+
+export const Posts = ({ user }: PostsProps) => {
   const posts = usePosts();
 
   if (!posts) {
@@ -23,7 +28,7 @@ export const Posts = () => {
   return (
     <div className="space-y-4">
       {posts.map((post) => (
-        <PostCard key={post.id} post={post} />
+        <PostCard key={post.id} user={user} post={post} />
       ))}
     </div>
   );

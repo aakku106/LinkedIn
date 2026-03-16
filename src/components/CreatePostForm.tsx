@@ -1,12 +1,13 @@
-import profilePic from "../assets/images/profile-pic.jpeg";
 import { createPost } from "../features/feed/CreatePost";
+import type { User } from "../lib/db";
 
 interface CreatePostProps {
+  user: User;
   draft: string;
   setDraft: (value: string) => void;
 }
 
-export function CreatePostForm({ draft, setDraft }: CreatePostProps) {
+export function CreatePostForm({ user, draft, setDraft }: CreatePostProps) {
   return (
     <form
       onSubmit={async (event) => {
@@ -19,8 +20,8 @@ export function CreatePostForm({ draft, setDraft }: CreatePostProps) {
       className="rounded-2xl border border-gray-200 bg-white p-4 text-black shadow-sm dark:border-gray-700 dark:bg-gray-950 dark:text-white">
       <div className="flex items-start gap-3">
         <img
-          src={profilePic}
-          alt="Adarasha Gaihre"
+          src={user.profilePic}
+          alt={user.name}
           className="h-12 w-12 rounded-full object-cover"
         />
         <textarea

@@ -1,4 +1,6 @@
 import { db } from "./db";
+import profilePic from "../assets/images/profile-pic.jpeg";
+import coverPic from "../assets/images/profile-coverPic.jpeg";
 
 export async function seedDatabase() {
   const userCount = await db.users.count();
@@ -9,6 +11,8 @@ export async function seedDatabase() {
       email: "aakku@aakku.com",
       password: "1234",
       avatar: "",
+      profilePic: profilePic,
+      coverPic: coverPic,
     });
 
     const fakePosts = Array.from({ length: 20 }).map((_, i) => ({

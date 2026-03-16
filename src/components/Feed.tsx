@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { db, type User } from "../lib/db";
 import { Posts } from "./Posts";
 import { RightSidebar } from "./RightSidebar";
 import { LeftSidebar } from "./LeftSidebar";
@@ -6,20 +7,31 @@ import { CreatePostForm } from "./CreatePostForm";
 
 export default function Feed() {
   const [draft, setDraft] = useState("");
+  const [user, setUser] = useState<User | null>(null);
+
+  useEffect(() => {
+    const loadUser = async () => {
+      const userData = await db.users.toCollection().first();
+      setUser(userData || null);
+    };
+    loadUser();
+  }, []);
+
+  if (!user) return <div>Loading...</div>;
 
   return (
     <div className="mx-auto grid w-full max-w-7xl gap-4 px-2 py-4 sm:px-4 md:px-6 lg:grid-cols-[minmax(0,1fr)_18rem] xl:grid-cols-[16rem_minmax(0,1fr)_19rem]">
-      <LeftSidebar />
+      <LeftSidebar user={user} />
 
       <section className="order-1 min-w-0 space-y-4 xl:col-start-2 xl:row-start-1">
-        <CreatePostForm draft={draft} setDraft={setDraft} />
+        <CreatePostForm user={user} draft={draft} setDraft={setDraft} />
 
         <div className="flex items-center gap-3 px-1 text-sm text-gray-600 dark:text-gray-400">
           <div className="h-px flex-1 bg-gray-200 dark:bg-gray-700" />
           <span>Sort by: Top</span>
         </div>
 
-        <Posts />
+        <Posts user={user} />
       </section>
 
       <RightSidebar />

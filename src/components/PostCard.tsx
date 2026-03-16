@@ -1,8 +1,10 @@
-import profilePic from "../assets/images/profile-pic.jpeg";
+import type { User } from "../lib/db";
 
 export function PostCard({
+  user,
   post,
 }: {
+  user: User;
   post: { id?: number; content: string; image?: string; createdAt: number };
 }) {
   const postTime = new Date(post.createdAt).toLocaleString([], {
@@ -16,15 +18,15 @@ export function PostCard({
     <article className="overflow-hidden rounded-2xl border border-gray-200 bg-white text-black shadow-sm dark:border-gray-700 dark:bg-gray-950 dark:text-white">
       <div className="flex items-start gap-3 px-4 pt-4">
         <img
-          src={profilePic}
-          alt="Adarasha Gaihre"
+          src={user.profilePic}
+          alt={user.name}
           className="h-12 w-12 rounded-full object-cover"
         />
 
         <div className="min-w-0 flex-1">
           <div className="flex items-start justify-between gap-3">
             <div className="min-w-0">
-              <p className="truncate text-sm font-semibold">Adarasha Gaihre</p>
+              <p className="truncate text-sm font-semibold">{user.name}</p>
               <p className="truncate text-xs text-gray-600 dark:text-gray-400">
                 Javascript Developer at Nepathya College
               </p>

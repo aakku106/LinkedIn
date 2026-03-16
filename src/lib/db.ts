@@ -7,6 +7,8 @@ export interface User {
   email: string;
   password: string;
   avatar?: string;
+  profilePic?: string;
+  coverPic?: string;
 }
 
 export interface Post {

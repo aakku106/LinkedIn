@@ -1,20 +1,23 @@
-import profilePic from "../assets/images/profile-pic.jpeg";
-import coverPic from "../assets/images/profile-coverPic.jpeg";
+import type { User } from "../lib/db";
 import nepathyaColzLogo from "../assets/images/nepathya-logo.png";
 // import { ProfileTop } from "./ProfileTop";
 
-function ProfileCard() {
+interface LeftSidebarProps {
+  user: User;
+}
+
+function ProfileCard({ user }: { user: User }) {
   return (
     <div className="rounded-2xl overflow-hidden border border-gray-200 bg-white shadow-sm dark:border-gray-700 dark:bg-gray-950">
       <div className="relative">
         <img
-          src={coverPic}
+          src={user.coverPic}
           className="w-full rounded-t-2xl aspect-4/1 object-cover"
           alt="Cover Picture"
         />
         <div className="absolute bottom-0 left-4 translate-y-1/2 border-4 border-white dark:border-gray-950 rounded-full">
           <img
-            src={profilePic}
+            src={user.profilePic}
             className="rounded-full w-24 aspect-square object-cover"
             alt="Profile picture"
           />
@@ -24,7 +27,7 @@ function ProfileCard() {
       <div className="px-4 pb-4 pt-14">
         <div>
           <p className="text-base font-extrabold text-black dark:text-white">
-            Adarasha Gaihre
+            {user.name}
           </p>
           <p className="text-xs text-gray-600 dark:text-gray-400">
             Student at Nepathya Collage
@@ -49,10 +52,10 @@ function ProfileCard() {
   );
 }
 
-export function LeftSidebar() {
+export function LeftSidebar({ user }: LeftSidebarProps) {
   return (
     <aside className="order-2 self-start space-y-4 xl:col-start-1 xl:row-start-1 xl:sticky xl:top-5">
-      <ProfileCard />
+      <ProfileCard user={user} />
       {/* <ProfileTop */}
 
       <section className="rounded-2xl border border-gray-200 bg-white p-4 text-black shadow-sm dark:border-gray-700 dark:bg-gray-950 dark:text-white">
