@@ -1,4 +1,4 @@
-import { createBrowserRouter, Navigate } from "react-router-dom";
+import { createHashRouter, Navigate } from "react-router-dom";
 
 import RootLayout from "./RootLayout";
 import LoginPage from "../features/auth/LoginPage";
@@ -9,7 +9,7 @@ import ProtectedRoute from "./ProtectedRoute";
 const baseUrl = import.meta.env.BASE_URL;
 const basename = baseUrl === "/" ? "/" : baseUrl.replace(/\/$/, "");
 
-const router = createBrowserRouter(
+const router = createHashRouter(
   [
     {
       path: "/login",
