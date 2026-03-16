@@ -20,7 +20,7 @@ export default function Feed() {
   if (!user) return <div>Loading...</div>;
 
   return (
-    <div className="mx-auto grid w-full max-w-7xl gap-4 px-2 py-4 sm:px-4 md:px-6 lg:grid-cols-[minmax(0,1fr)_18rem] xl:grid-cols-[16rem_minmax(0,1fr)_19rem]">
+    <div className="mx-auto  grid w-full max-w-7xl gap-4 px-2 py-4 sm:px-4 md:px-6 lg:grid-cols-[minmax(0,1fr)_18rem] xl:grid-cols-[16rem_minmax(0,1fr)_19rem]">
       <LeftSidebar user={user} />
 
       <section className="order-1 min-w-0 space-y-4 xl:col-start-2 xl:row-start-1">

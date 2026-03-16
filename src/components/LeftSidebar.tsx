@@ -8,7 +8,7 @@ interface LeftSidebarProps {
 
 function ProfileCard({ user }: { user: User }) {
   return (
-    <div className="rounded-2xl overflow-hidden border border-gray-200 bg-white shadow-sm dark:border-gray-700 dark:bg-gray-950">
+    <div className="rounded-2xl overflow-hidden border border-gray-200 bg-white shadow-sm dark:border-gray-700 dark:bg-gray-950 ">
       <div className="relative">
         <img
           src={user.coverPic}
@@ -54,7 +54,7 @@ function ProfileCard({ user }: { user: User }) {
 
 export function LeftSidebar({ user }: LeftSidebarProps) {
   return (
-    <aside className="order-2 self-start space-y-4 xl:col-start-1 xl:row-start-1 xl:sticky xl:top-5">
+    <aside className="order-2 self-start space-y-4 hidden xl:block xl:fixed xl:left-20 xl:top-33  xl:w-64 max-h-[calc(100vh-120px)] overflow-y-auto">
       <ProfileCard user={user} />
       {/* <ProfileTop */}
 
