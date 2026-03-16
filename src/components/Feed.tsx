@@ -1,15 +1,54 @@
 import { useState } from "react";
 import profilePic from "../assets/images/profile-pic.jpeg";
+import coverPic from "../assets/images/profile-coverPic.jpeg";
+import nepathyaColzLogo from "../assets/images/nepathya-logo.png";
 import { createPost } from "../features/feed/CreatePost";
 import { Posts } from "./Posts";
-import { ProfileTop } from "./ProfileTop";
+// import { ProfileTop } from "./ProfileTop";
 
-function IconSlot() {
+function ProfileCard() {
   return (
-    <span
-      aria-hidden="true"
-      className="h-5 w-5 rounded-md border border-dashed border-gray-300 bg-gray-100 dark:border-gray-600 dark:bg-gray-800"
-    />
+    <div className="rounded-2xl overflow-hidden border border-gray-200 bg-white shadow-sm dark:border-gray-700 dark:bg-gray-950">
+      <div className="relative">
+        <img
+          src={coverPic}
+          className="w-full rounded-t-2xl aspect-4/1 object-cover"
+          alt="Cover Picture"
+        />
+        <div className="absolute bottom-0 left-4 translate-y-1/2 border-4 border-white dark:border-gray-950 rounded-full">
+          <img
+            src={profilePic}
+            className="rounded-full w-24 aspect-square object-cover"
+            alt="Profile picture"
+          />
+        </div>
+      </div>
+
+      <div className="px-4 pb-4 pt-14">
+        <div>
+          <p className="text-sm font-bold text-black dark:text-white">
+            Adarasha Gaihre
+          </p>
+          <p className="text-xs text-gray-600 dark:text-gray-400">
+            Javascript Developer at Nepathya College
+          </p>
+          <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
+            Rupandehi District, Lumbiniī, Nepal
+          </p>
+
+          <div className="flex items-center gap-2 mt-2">
+            <img
+              src={nepathyaColzLogo}
+              alt="Nepathya College"
+              className="h-6 w-6 rounded-full"
+            />
+            <p className="text-xs font-medium text-black dark:text-white">
+              Nepathya College
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -19,7 +58,8 @@ export default function Feed() {
   return (
     <div className="mx-auto grid w-full max-w-7xl gap-4 px-2 py-4 font-sans sm:px-4 md:px-6 lg:grid-cols-[minmax(0,1fr)_18rem] xl:grid-cols-[16rem_minmax(0,1fr)_19rem]">
       <aside className="order-2 self-start space-y-4 xl:col-start-1 xl:row-start-1 xl:sticky xl:top-24">
-        <ProfileTop />
+        <ProfileCard />
+        {/* <ProfileTop */}
 
         <section className="rounded-2xl border border-gray-200 bg-white p-4 text-black shadow-sm dark:border-gray-700 dark:bg-gray-950 dark:text-white">
           <div className="space-y-3">
@@ -174,15 +214,57 @@ export default function Feed() {
 
           <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
             <div className="flex flex-wrap gap-2 text-sm font-medium text-gray-700 dark:text-gray-300">
-              {["Video", "Photo", "Write article"].map((item) => (
-                <button
-                  key={item}
-                  type="button"
-                  className="flex items-center gap-2 rounded-full px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-900">
-                  <IconSlot />
-                  <span>{item}</span>
-                </button>
-              ))}
+              <button
+                type="button"
+                className="flex items-center gap-2 rounded-full px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-900">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  id="video-medium"
+                  aria-hidden="true"
+                  role="none"
+                  data-supported-dps="24x24"
+                  fill="currentColor"
+                  width="24"
+                  height="24">
+                  <path d="M19 4H5a3 3 0 00-3 3v10a3 3 0 003 3h14a3 3 0 003-3V7a3 3 0 00-3-3zm-9 12V8l6 4z"></path>
+                </svg>
+                <span>Video</span>
+              </button>
+              <button
+                type="button"
+                className="flex items-center gap-2 rounded-full px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-900">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  id="image-medium"
+                  aria-hidden="true"
+                  role="none"
+                  data-supported-dps="24x24"
+                  fill="currentColor"
+                  width="24"
+                  height="24">
+                  <path d="M19 4H5a3 3 0 00-3 3v10a3 3 0 003 3h14a3 3 0 003-3V7a3 3 0 00-3-3zm1 13a1 1 0 01-.29.71L16 14l-2 2-6-6-4 4V7a1 1 0 011-1h14a1 1 0 011 1zm-2-7a2 2 0 11-2-2 2 2 0 012 2z"></path>
+                </svg>
+                <span>Photo</span>
+              </button>
+              <button
+                type="button"
+                className="flex items-center gap-2 rounded-full px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-900">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  id="content-align-left-medium"
+                  aria-hidden="true"
+                  role="none"
+                  data-supported-dps="24x24"
+                  fill="currentColor"
+                  width="24"
+                  height="24">
+                  <path d="M21 3v2H3V3zm-6 6h6V7h-6zm0 4h6v-2h-6zm0 4h6v-2h-6zM3 21h18v-2H3zM13 7H3v10h10z"></path>
+                </svg>
+                <span>Write article</span>
+              </button>
             </div>
 
             <button
@@ -206,7 +288,15 @@ export default function Feed() {
         <section className="rounded-2xl border border-gray-200 bg-white p-4 text-black shadow-sm dark:border-gray-700 dark:bg-gray-950 dark:text-white">
           <div className="flex items-center justify-between gap-3">
             <h2 className="text-base font-semibold">Add to your feed</h2>
-            <IconSlot />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 16 16"
+              fill="currentColor"
+              width="16"
+              height="16"
+              className="text-gray-600 dark:text-gray-400">
+              <path d="M9 3H7v6H1v2h6v6h2v-6h6V9H9V3z" />
+            </svg>
           </div>
 
           <div className="mt-4 space-y-4">
