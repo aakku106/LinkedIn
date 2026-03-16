@@ -3,7 +3,7 @@ import "../assets/styles/navBar.css";
 
 export default function Navbar() {
   return (
-    <nav className=" sticky top-0 backdrop-blur-sm navBar flex justify-between bg-white/90 dark:bg-black/90 text-black dark:text-white text-nowrap items-center-safe z-40">
+    <nav className="fixed top-0 w-full backdrop-blur-sm navBar flex justify-between bg-white/70 dark:bg-black/70 text-black dark:text-white text-nowrap items-center-safe z-40">
       <NavLink
         to={"/"}
         className="logo-container order-first hover:cursor-pointer hover:text-blue-700}">
