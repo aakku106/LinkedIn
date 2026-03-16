@@ -26,14 +26,14 @@ function ProfileCard() {
 
       <div className="px-4 pb-4 pt-14">
         <div>
-          <p className="text-sm font-bold text-black dark:text-white">
+          <p className="text-base font-extrabold text-black dark:text-white">
             Adarasha Gaihre
           </p>
           <p className="text-xs text-gray-600 dark:text-gray-400">
-            Javascript Developer at Nepathya College
+            Student at Nepathya Collage
           </p>
           <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
-            Rupandehi District, Lumbiniī, Nepal
+            Rupandehi District, Lumbiniī
           </p>
 
           <div className="flex items-center gap-2 mt-2">
@@ -56,7 +56,7 @@ export default function Feed() {
   const [draft, setDraft] = useState("");
 
   return (
-    <div className="mx-auto grid w-full max-w-7xl gap-4 px-2 py-4 font-sans sm:px-4 md:px-6 lg:grid-cols-[minmax(0,1fr)_18rem] xl:grid-cols-[16rem_minmax(0,1fr)_19rem]">
+    <div className="mx-auto grid w-full max-w-7xl gap-4 px-2 py-4 sm:px-4 md:px-6 lg:grid-cols-[minmax(0,1fr)_18rem] xl:grid-cols-[16rem_minmax(0,1fr)_19rem]">
       <aside className="order-2 self-start space-y-4 xl:col-start-1 xl:row-start-1 xl:sticky xl:top-24">
         <ProfileCard />
         {/* <ProfileTop */}

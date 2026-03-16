@@ -25,7 +25,7 @@ rounded-2xl w-full">
 
       <div className="px-4 sm:px-8 pb-4 pt-14 sm:pt-20">
         <div className="flex justify-between flex-wrap gap-2">
-          <h1 className="text-2xl font-bold font-mono text-black dark:text-white">
+          <h1 className="text-2xl font-bold text-black dark:text-white">
             Adarasha Gaihre
           </h1>
           <div className="flex flex-wrap items-center-safe gap-4">
@@ -50,7 +50,7 @@ rounded-2xl w-full">
           </li>
         </div>
         <div className="connections mt-3">
-          <a className="text-blue-800 dark:text-blue-400 font-mono hover:cursor-pointer">
+          <a className="text-blue-800 dark:text-blue-400 hover:cursor-pointer">
             86 Connections
           </a>
         </div>
