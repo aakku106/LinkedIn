@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuthStore } from "../features/auth/authStore";
+import { db } from "../lib/db";
 
 export default function LoginWithEmail() {
   const navigate = useNavigate();
@@ -9,13 +10,28 @@ export default function LoginWithEmail() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (email === "aakku@linkedin.com" && password === "1234") {
-      login(1);
-      navigate("/feed");
-    } else alert("Invalid credentials");
+    const normalizedEmail = email.trim().toLowerCase();
+
+    try {
+      const user = await db.users
+        .where("email")
+        .equals(normalizedEmail)
+        .first();
+
+      if (user && user.password === password && typeof user.id === "number") {
+        login(user.id);
+        navigate("/feed", { replace: true });
+        return;
+      }
+    } catch {
+      alert("Something went wrong. Please try again.");
+      return;
+    }
+
+    alert("Invalid credentials");
   };
 
   return (
