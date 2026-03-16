@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import type { User } from "../lib/db";
 import nepathyaColzLogo from "../assets/images/nepathya-logo.png";
 // import { ProfileTop } from "./ProfileTop";
@@ -8,7 +9,9 @@ interface LeftSidebarProps {
 
 function ProfileCard({ user }: { user: User }) {
   return (
-    <div className="rounded-2xl overflow-hidden border border-gray-200 bg-white shadow-sm dark:border-gray-700 dark:bg-gray-950 ">
+    <Link
+      to={"/profile"}
+      className="rounded-2xl overflow-hidden border border-gray-200 bg-white shadow-sm dark:border-gray-700 dark:bg-gray-950 ">
       <div className="relative">
         <img
           src={user.coverPic}
@@ -48,7 +51,7 @@ function ProfileCard({ user }: { user: User }) {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 
