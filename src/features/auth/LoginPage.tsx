@@ -16,6 +16,12 @@ export default function LoginPage() {
   if (userId) return <Navigate to="/feed" replace />;
 
   if (signInOption === "email") return <LoginWithEmail />;
+  else if (signInOption === "google") return <div className="fixed top-40 left-30" >
+    <h1>Not implemented yet</h1>
+    <h1>Use login with email</h1>
+    <h1>demo email: aakku@aakku.com</h1>
+    <h1>demp passwprd: 1234</h1>
+  </div>
 
   return (
     <div className="relative">
