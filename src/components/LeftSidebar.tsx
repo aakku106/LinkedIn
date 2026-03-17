@@ -11,7 +11,7 @@ function ProfileCard({ user }: { user: User }) {
   return (
     <Link
       to={"/profile"}
-      className="rounded-2xl overflow-hidden border border-gray-200 bg-white shadow-sm dark:border-gray-700 dark:bg-gray-950 ">
+      className="rounded-2xl overflow-hidden bg-white shadow-sm dark:border-gray-700 dark:bg-gray-950 ">
       <div className="relative">
         <img
           src={user.coverPic}
