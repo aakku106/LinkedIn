@@ -7,52 +7,6 @@ interface LeftSidebarProps {
   user: User;
 }
 
-function ProfileCard({ user }: { user: User }) {
-  return (
-    <Link
-      to={"/profile"}
-      className="rounded-2xl overflow-hidden bg-white shadow-sm dark:border-gray-700 dark:bg-gray-950 ">
-      <div className="relative">
-        <img
-          src={user.coverPic}
-          className="w-full rounded-t-2xl aspect-4/1 object-cover"
-          alt="Cover Picture"
-        />
-        <div className="absolute bottom-0 left-4 translate-y-1/2 border-4 border-white dark:border-gray-950 rounded-full">
-          <img
-            src={user.profilePic}
-            className="rounded-full w-24 aspect-square object-cover"
-            alt="Profile picture"
-          />
-        </div>
-      </div>
-
-      <div className="px-4 pb-4 pt-14">
-        <p className="text-base font-extrabold text-black dark:text-white">
-          {user.name}
-        </p>
-        <p className="text-xs text-gray-600 dark:text-gray-400">
-          Student at Nepathya Collage
-        </p>
-        <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
-          Rupandehi District, Lumbiniī
-        </p>
-
-        <div className="flex items-center gap-2 mt-2">
-          <img
-            src={nepathyaColzLogo}
-            alt="Nepathya College"
-            className="h-6 w-6 rounded-full"
-          />
-          <p className="text-xs font-medium text-black dark:text-white">
-            Nepathya College
-          </p>
-        </div>
-      </div>
-    </Link>
-  );
-}
-
 export function LeftSidebar({ user }: LeftSidebarProps) {
   return (
     <aside className="order-2 self-start space-y-4 hidden xl:block xl:fixed xl:left-20 xl:top-33  xl:w-64 max-h-[calc(100vh-120px)] overflow-y-auto">
@@ -184,5 +138,51 @@ export function LeftSidebar({ user }: LeftSidebarProps) {
         </button>
       </section>
     </aside>
+  );
+}
+
+function ProfileCard({ user }: { user: User }) {
+  return (
+    <Link
+      to={"/profile"}
+      className="rounded-2xl overflow-hidden bg-white shadow-sm dark:border-gray-700 dark:bg-gray-950 ">
+      <div className="relative">
+        <img
+          src={user.coverPic}
+          className="w-full rounded-t-2xl aspect-4/1 object-cover"
+          alt="Cover Picture"
+        />
+        <div className="absolute bottom-0 left-4 translate-y-1/2 border-4 border-white dark:border-gray-950 rounded-full">
+          <img
+            src={user.profilePic}
+            className="rounded-full w-24 aspect-square object-cover"
+            alt="Profile picture"
+          />
+        </div>
+      </div>
+
+      <div className="px-4 pb-4 pt-14">
+        <p className="text-base font-extrabold text-black dark:text-white">
+          {user.name}
+        </p>
+        <p className="text-xs text-gray-600 dark:text-gray-400">
+          Student at Nepathya Collage
+        </p>
+        <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
+          Rupandehi District, Lumbiniī
+        </p>
+
+        <div className="flex items-center gap-2 mt-2">
+          <img
+            src={nepathyaColzLogo}
+            alt="Nepathya College"
+            className="h-6 w-6 rounded-full"
+          />
+          <p className="text-xs font-medium text-black dark:text-white">
+            Nepathya College
+          </p>
+        </div>
+      </div>
+    </Link>
   );
 }
