@@ -28,27 +28,25 @@ function ProfileCard({ user }: { user: User }) {
       </div>
 
       <div className="px-4 pb-4 pt-14">
-        <div>
-          <p className="text-base font-extrabold text-black dark:text-white">
-            {user.name}
-          </p>
-          <p className="text-xs text-gray-600 dark:text-gray-400">
-            Student at Nepathya Collage
-          </p>
-          <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
-            Rupandehi District, Lumbiniī
-          </p>
+        <p className="text-base font-extrabold text-black dark:text-white">
+          {user.name}
+        </p>
+        <p className="text-xs text-gray-600 dark:text-gray-400">
+          Student at Nepathya Collage
+        </p>
+        <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
+          Rupandehi District, Lumbiniī
+        </p>
 
-          <div className="flex items-center gap-2 mt-2">
-            <img
-              src={nepathyaColzLogo}
-              alt="Nepathya College"
-              className="h-6 w-6 rounded-full"
-            />
-            <p className="text-xs font-medium text-black dark:text-white">
-              Nepathya College
-            </p>
-          </div>
+        <div className="flex items-center gap-2 mt-2">
+          <img
+            src={nepathyaColzLogo}
+            alt="Nepathya College"
+            className="h-6 w-6 rounded-full"
+          />
+          <p className="text-xs font-medium text-black dark:text-white">
+            Nepathya College
+          </p>
         </div>
       </div>
     </Link>
