@@ -3,11 +3,9 @@ import type { User } from "../lib/db";
 import nepathyaColzLogo from "../assets/images/nepathya-logo.png";
 // import { ProfileTop } from "./ProfileTop";
 
-interface LeftSidebarProps {
-  user: User;
-}
+type UserProp = { user: User };
 
-export function LeftSidebar({ user }: LeftSidebarProps) {
+export function LeftSidebar({ user }: UserProp) {
   return (
     <aside className="order-2 self-start space-y-4 hidden xl:block xl:fixed xl:left-20 xl:top-33  xl:w-64 max-h-[calc(100vh-120px)] overflow-y-auto">
       <ProfileCard user={user} />
@@ -141,7 +139,7 @@ export function LeftSidebar({ user }: LeftSidebarProps) {
   );
 }
 
-function ProfileCard({ user }: { user: User }) {
+function ProfileCard({ user }: UserProp) {
   return (
     <Link
       to={"/profile"}
