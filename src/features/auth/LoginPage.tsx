@@ -24,7 +24,7 @@ export default function LoginPage() {
   </div>
 
   return (
-    <div className="relative">
+    <section className="relative">
       <nav className=" nav-bar p-1 sticky top-0 backdrop-blur-sm bg-white-700/50">
         <div className="logo m-6 ">
           <svg
@@ -35,7 +35,7 @@ export default function LoginPage() {
             className="lazy-loaded "
             aria-busy="false">
             <g
-              className="inbug hover:text-black text-blue-800"
+              className="hover:text-black text-blue-800"
               stroke="none"
               strokeWidth="1"
               fill="none"
@@ -74,7 +74,7 @@ export default function LoginPage() {
       </nav>
 
       <section className="flex flex-col justify-between">
-        <div className=" p-6 login-outer-container login-section flex flex-row flex-wrap justify-around bg-white-50">
+        <article className=" p-6 login-outer-container login-section flex flex-row flex-wrap justify-around bg-white-50">
           <div className="login-sections  flex flex-col items-center justify-center-safe">
             <p className="font-medium text-5xl text-pretty max-w-96">
               Welcome to your professional community
@@ -116,9 +116,9 @@ export default function LoginPage() {
               src={LoginWelcomeImg}
             />
           </div>
-        </div>
+        </article>
 
-        <div className=" py-8 login-outer-container bg-blue-900 flex flex-row flex-wrap justify-between px-14">
+        <article className=" py-8 login-outer-container bg-blue-900 flex flex-row flex-wrap justify-between px-14">
           <div className="TopContent p-6 text-blue-100">
             <h2 className="header font-extrabold text-5xl">
               Explore top LinkedIn content
@@ -142,8 +142,9 @@ export default function LoginPage() {
             <button className="top-contents">Ecommerce</button>
             <button className="top-contents">Show All</button>
           </div>
-        </div>
-        <div className=" py-8 login-outer-container bg-white text-black flex flex-row flex-wrap justify-between px-14">
+        </article>
+
+        <article className=" py-8 login-outer-container bg-white text-black flex flex-row flex-wrap justify-between px-14">
           <div className="TopContent p-6 ">
             <h2 className="header font-extrabold text-5xl">
               Find the right job or internship for you
@@ -163,23 +164,23 @@ export default function LoginPage() {
             <button className="top-contents">Ecommerce</button>
             <button className="top-contents">Show All</button>
           </div>
-        </div>
+        </article>
 
-        <div className="login-outer-container p-24 bg-blue-200">4</div>
-        <div className="login-outer-container">5</div>
-        <div className="login-outer-container">6</div>
-        <div className="login-outer-container">7</div>
-        <div className="login-outer-container">8</div>
-        <div className="login-outer-container px-16">
+        <article className="login-outer-container p-24 bg-blue-200">4</article>
+        <article className="login-outer-container">5</article>
+        <article className="login-outer-container">6</article>
+        <article className="login-outer-container">7</article>
+        <article className="login-outer-container">8</article>
+        <article className="login-outer-container px-16">
           <h2 className="header font-semibold text-5xl ">
             Join your colleagues, classmates, and friends on LinkedIn
           </h2>
           <button className="p-4 bg-blue-800 text-2xl border rounded-full mt-8 hover:bg-blue-200 hover:text-blue-800 hover:cursor-pointer hover:scale-105">
             Get Started
           </button>
-        </div>
-        <div className="login-outer-container">10</div>
+        </article>
+        <article className="login-outer-container">10</article>
       </section>
-    </div>
+    </section>
   );
 }
