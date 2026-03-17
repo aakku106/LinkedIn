@@ -28,7 +28,7 @@ export function PostCard({
             <div className="min-w-0">
               <p className="truncate text-sm font-semibold">{user.name}</p>
               <p className="truncate text-xs text-gray-600 dark:text-gray-400">
-                Javascript Developer at Nepathya College
+                Student at Nepathya College
               </p>
               <p className="mt-1 text-xs text-gray-600 dark:text-gray-400">
                 {postTime}
@@ -85,7 +85,7 @@ export function PostCard({
           alt="Post attachment"
           className="max-h-128 w-full object-cover"
         />
-      : null}
+        : null}
 
       <div className="grid grid-cols-2 gap-1 border-t border-gray-200 px-2 py-2 text-sm text-gray-600 dark:border-gray-800 dark:text-gray-300 sm:grid-cols-4">
         <button
