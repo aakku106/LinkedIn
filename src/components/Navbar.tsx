@@ -1,7 +1,35 @@
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import "../assets/styles/navBar.css";
+import { db, type User } from "../lib/db";
+import { useAuthStore } from "../features/auth/authStore";
 
 export default function Navbar() {
+  const [user, setUser] = useState<User | null>(null);
+  const userId = useAuthStore((state) => state.userId);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    const loadUser = async () => {
+      if (typeof userId !== "number") {
+        if (isMounted) setUser(null);
+        return;
+      }
+
+      const currentUser = await db.users.get(userId);
+      if (isMounted) {
+        setUser(currentUser || null);
+      }
+    };
+
+    loadUser();
+
+    return () => {
+      isMounted = false;
+    };
+  }, [userId]);
+
   return (
     <nav className="fixed top-0 w-full backdrop-blur-sm navBar flex justify-between bg-white/70 dark:bg-black/70 text-black dark:text-white text-nowrap items-center-safe z-40">
       <NavLink
@@ -125,13 +153,12 @@ export default function Navbar() {
         </NavLink>
       </div>
 
-      <div className="profile">
+      <div className="profile flex items-center">
         <img
           width="24"
-          src="https://media.licdn.com/dms/image/v2/D4D03AQFwmSRvw8b-zA/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1720872992345?e=1774483200&amp;v=beta&amp;t=dXlkwGyqdd8ba4gknTiWai0eElE9QGCL31yV4f4D6MI"
+          src={user?.profilePic}
           height="24"
-          alt="Adarasha Gaihre"
-          id="ember16"
+          alt={user?.name}
           className="global-nav__me-photo evi-image ember-view"
         />
       </div>
