@@ -1,23 +1,16 @@
-import { useState, useEffect } from "react";
-import { db, type User } from "../lib/db";
+import { useState } from "react";
+import type { User } from "../lib/db";
 import { Posts } from "./Posts";
 import { RightSidebar } from "./RightSidebar";
 import { LeftSidebar } from "./LeftSidebar";
 import { CreatePostForm } from "./CreatePostForm";
 
-export default function Feed() {
+interface FeedProps {
+  user: User;
+}
+
+export default function Feed({ user }: FeedProps) {
   const [draft, setDraft] = useState("");
-  const [user, setUser] = useState<User | null>(null);
-
-  useEffect(() => {
-    const loadUser = async () => {
-      const userData = await db.users.toCollection().first();
-      setUser(userData || null);
-    };
-    loadUser();
-  }, []);
-
-  if (!user) return <div>Loading...</div>;
 
   return (
     <div className="mx-auto  grid w-full max-w-7xl gap-4 px-2 py-4 sm:px-4 md:px-6 lg:grid-cols-[minmax(0,1fr)_18rem] xl:grid-cols-[16rem_minmax(0,1fr)_19rem]">
