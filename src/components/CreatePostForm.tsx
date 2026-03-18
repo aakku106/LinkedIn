@@ -1,13 +1,14 @@
+import { useState } from "react";
 import { createPost } from "../features/feed/CreatePost";
 import type { User } from "../lib/db";
 
 interface CreatePostProps {
   user: User;
-  draft: string;
-  setDraft: (value: string) => void;
 }
 
-export function CreatePostForm({ user, draft, setDraft }: CreatePostProps) {
+export function CreatePostForm({ user }: CreatePostProps) {
+  const [draft, setDraft] = useState("");
+
   return (
     <form
       onSubmit={async (event) => {
