@@ -9,6 +9,11 @@ export interface User {
   avatar?: string;
   profilePic?: string;
   coverPic?: string;
+  headline?: string;
+  bio?: string;
+  location?: string;
+  school?: string;
+  connections?: number;
 }
 
 export interface Post {
