@@ -39,23 +39,19 @@ rounded-2xl w-full">
               width="34"
               className="bio_clzLogo"
             />
-            <span className="text-black dark:text-white">Nepathya College</span>
+            <span className="text-black dark:text-white">{user.school}</span>
           </div>
         </div>
-        <div className="mt-2 text-black dark:text-white">
-          Student At Nepathya College
-        </div>
+        <div className="mt-2 text-black dark:text-white">{user.headline}</div>
         <div className="flex flex-row flex-wrap gap-4 mt-1">
-          <span className="text-black dark:text-white">
-            Rupandehi District, Lumbiniī, Nepal
-          </span>
+          <span className="text-black dark:text-white">{user.location}</span>
           <li className="text-blue-800 dark:text-blue-400 hover:cursor-pointer">
             Contact info
           </li>
         </div>
         <div className="connections mt-3">
           <a className="text-blue-800 dark:text-blue-400 hover:cursor-pointer">
-            86 Connections
+            {user.connections} Connections
           </a>
         </div>
 
