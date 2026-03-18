@@ -14,8 +14,8 @@ export function CreatePostForm({ user }: CreatePostProps) {
       onSubmit={async (event) => {
         event.preventDefault();
         const content = draft.trim();
-        if (!content) return;
-        await createPost(content, 1);
+        if (!content || typeof user.id !== "number") return;
+        await createPost(content, user.id);
         setDraft("");
       }}
       className="rounded-2xl border border-gray-200 bg-white p-4 text-black shadow-sm dark:border-gray-700 dark:bg-gray-950 dark:text-white">
