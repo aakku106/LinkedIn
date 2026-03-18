@@ -3,12 +3,36 @@ import { Navigate } from "react-router-dom";
 import LoginWelcomeImg from "../../assets/images/welcomeToCommunityLoginPage.png";
 import "../../assets/styles/login.css";
 import LoginWithEmail from "../../components/LoginWithEmail";
+import { db } from "../../lib/db";
 import { useAuthStore } from "./authStore";
 export default function LoginPage() {
   const [signInOption, setSignInOption] = useState("none");
+  const [demoCredentials, setDemoCredentials] = useState<{
+    email: string;
+    password: string;
+  } | null>(null);
 
   useEffect(() => {
-    document.title = "Login | LinkedIn By Adarasha Gaihre";
+    document.title = "Login | LinkedIn Clone";
+
+    let isMounted = true;
+
+    const loadDemoCredentials = async () => {
+      const firstUser = await db.users.orderBy("id").first();
+
+      if (isMounted && firstUser) {
+        setDemoCredentials({
+          email: firstUser.email,
+          password: firstUser.password,
+        });
+      }
+    };
+
+    loadDemoCredentials();
+
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
   const userId = useAuthStore((s) => s.userId);
@@ -16,14 +40,18 @@ export default function LoginPage() {
   if (userId) return <Navigate to="/feed" replace />;
 
   if (signInOption === "email") return <LoginWithEmail />;
-  else if (signInOption === "google") return (
-    <div className="fixed top-40 left-30" >
-      <h1>Not implemented yet</h1>
-      <h1>Use login with email</h1>
-      <h1>demo email: aakku@aakku.com</h1>
-      <h1>demo passwprd: 1234</h1>
-    </div>
-  )
+  else if (signInOption === "google")
+    return (
+      <div className="fixed top-40 left-30">
+        <h1>Not implemented yet</h1>
+        <h1>Use login with email</h1>
+        <h1>demo email: {demoCredentials?.email ?? "not available"}</h1>
+        <h1>demo password: {demoCredentials?.password ?? "not available"}</h1>
+        <h1>
+          <a href="/">GO BACK</a>
+        </h1>
+      </div>
+    );
   return (
     <section className="relative">
       <LoginNav />
@@ -188,5 +216,5 @@ const LoginNav = () => {
         </svg>
       </div>
     </nav>
-  )
-}
+  );
+};
