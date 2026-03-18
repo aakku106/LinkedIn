@@ -21,7 +21,7 @@ export default function Feed({ user }: FeedProps) {
           <span>Sort by: Top</span>
         </div>
 
-        <Posts user={user} />
+        <Posts />
       </section>
 
       <RightSidebar />

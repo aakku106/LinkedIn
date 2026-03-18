@@ -1,13 +1,31 @@
+import { useEffect, useState } from "react";
 import type { User } from "../lib/db";
+import { db } from "../lib/db";
 import { usePosts } from "../features/feed/usePosts";
 import { PostCard } from "./PostCard";
 
-interface PostsProps {
-  user: User;
-}
-
-export const Posts = ({ user }: PostsProps) => {
+export const Posts = () => {
   const posts = usePosts();
+  const [authors, setAuthors] = useState<Map<number, User>>(new Map());
+
+  useEffect(() => {
+    if (!posts) return;
+
+    const fetchAuthors = async () => {
+      const authorMap = new Map<number, User>();
+      for (const post of posts) {
+        if (!authorMap.has(post.userId)) {
+          const author = await db.users.get(post.userId);
+          if (author) {
+            authorMap.set(post.userId, author);
+          }
+        }
+      }
+      setAuthors(authorMap);
+    };
+
+    fetchAuthors();
+  }, [posts]);
 
   if (!posts) {
     return (
@@ -27,9 +45,10 @@ export const Posts = ({ user }: PostsProps) => {
 
   return (
     <div className="space-y-4">
-      {posts.map((post) => (
-        <PostCard key={post.id} user={user} post={post} />
-      ))}
+      {posts.map((post) => {
+        const author = authors.get(post.userId);
+        return <PostCard key={post.id} post={post} author={author} />;
+      })}
     </div>
   );
 };

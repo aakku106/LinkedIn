@@ -163,9 +163,7 @@ function ProfileCard({ user }: UserProp) {
         <p className="text-base font-extrabold text-black dark:text-white">
           {user.name}
         </p>
-        <p className="text-xs text-gray-600 dark:text-gray-400">
-          Student at Nepathya Collage
-        </p>
+        <p className="text-xs text-gray-600 dark:text-gray-400">Student at Nepathya Collage</p>
         <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
           Rupandehi District, Lumbiniī
         </p>
