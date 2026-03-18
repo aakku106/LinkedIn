@@ -1,12 +1,11 @@
-import type { User } from "../lib/db";
+import type { User, Post } from "../lib/db";
 
-export function PostCard({
-  user,
-  post,
-}: {
-  user: User;
-  post: { id?: number; content: string; image?: string; createdAt: number };
-}) {
+interface PostCardProps {
+  post: Post;
+  author?: User;
+}
+
+export function PostCard({ post, author }: PostCardProps) {
   const postTime = new Date(post.createdAt).toLocaleString([], {
     month: "short",
     day: "numeric",
@@ -18,17 +17,17 @@ export function PostCard({
     <article className="overflow-hidden rounded-2xl border border-gray-200 bg-white text-black shadow-sm dark:border-gray-700 dark:bg-gray-950 dark:text-white">
       <div className="flex items-start gap-3 px-4 pt-4">
         <img
-          src={user.profilePic}
-          alt={user.name}
+          src={author?.profilePic}
+          alt={author?.name}
           className="h-12 w-12 rounded-full object-cover"
         />
 
         <div className="min-w-0 flex-1">
           <div className="flex items-start justify-between gap-3">
             <div className="min-w-0">
-              <p className="truncate text-sm font-semibold">{user.name}</p>
+              <p className="truncate text-sm font-semibold">{author?.name}</p>
               <p className="truncate text-xs text-gray-600 dark:text-gray-400">
-                Student at Nepathya College
+                {author?.headline}
               </p>
               <p className="mt-1 text-xs text-gray-600 dark:text-gray-400">
                 {postTime}
@@ -85,7 +84,7 @@ export function PostCard({
           alt="Post attachment"
           className="max-h-128 w-full object-cover"
         />
-        : null}
+      : null}
 
       <div className="grid grid-cols-2 gap-1 border-t border-gray-200 px-2 py-2 text-sm text-gray-600 dark:border-gray-800 dark:text-gray-300 sm:grid-cols-4">
         <button
