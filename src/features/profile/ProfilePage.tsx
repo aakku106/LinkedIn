@@ -8,6 +8,8 @@ export default function ProfilePage() {
   const userId = useAuthStore((state) => state.userId);
 
   useEffect(() => {
+    document.title = "Profile | LinkedIn Clone | By Adarasha Gaihre";
+
     let isMounted = true;
 
     const loadUser = async () => {

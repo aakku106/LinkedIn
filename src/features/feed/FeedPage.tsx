@@ -8,6 +8,7 @@ export default function FeedPage() {
   const userId = useAuthStore((state) => state.userId);
 
   useEffect(() => {
+    document.title = "Feed | LinkedIn Clone | By Adarasha Gaihre";
     let isMounted = true;
 
     const loadUser = async () => {
