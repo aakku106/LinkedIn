@@ -40,7 +40,7 @@ export default function ProfilePage() {
   }
 
   return (
-    <section className="w-full px-2 sm:px-20 md:px-30 lg:px-70 py-4">
+    <section className="w-full bg-[#cdc9be26] px-2 sm:px-20 md:px-30 lg:px-70 py-4">
       <div className="mx-auto w-full max-w-5xl">
         <ProfileTop user={user} />
       </div>
