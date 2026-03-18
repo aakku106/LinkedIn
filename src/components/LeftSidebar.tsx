@@ -163,11 +163,12 @@ function ProfileCard({ user }: UserProp) {
         <p className="text-base font-extrabold text-black dark:text-white">
           {user.name}
         </p>
-        <p className="text-xs text-gray-600 dark:text-gray-400">Student at Nepathya Collage</p>
-        <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
-          Rupandehi District, Lumbiniī
+        <p className="text-xs text-gray-600 dark:text-gray-400">
+          {user.headline}
         </p>
-
+        <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
+          {user.location}
+        </p>
         <div className="flex items-center gap-2 mt-2">
           <img
             src={nepathyaColzLogo}
@@ -175,7 +176,7 @@ function ProfileCard({ user }: UserProp) {
             className="h-6 w-6 rounded-full"
           />
           <p className="text-xs font-medium text-black dark:text-white">
-            Nepathya College
+            {user.school}
           </p>
         </div>
       </div>
