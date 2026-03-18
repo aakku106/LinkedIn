@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import LoginWelcomeImg from "../../assets/images/welcomeToCommunityLoginPage.png";
 import "../../assets/styles/login.css";
 import LoginWithEmail from "../../components/LoginWithEmail";
@@ -47,9 +47,12 @@ export default function LoginPage() {
         <h1>Use login with email</h1>
         <h1>demo email: {demoCredentials?.email ?? "not available"}</h1>
         <h1>demo password: {demoCredentials?.password ?? "not available"}</h1>
-        <h1>
-          <a href="/">GO BACK</a>
-        </h1>
+        <Link
+          to="/login"
+          onClick={() => setSignInOption("none")}
+          className="mt-3 inline-block text-blue-700 underline hover:text-blue-800">
+          Go back
+        </Link>
       </div>
     );
   return (
