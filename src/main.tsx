@@ -5,7 +5,10 @@ import router from "./app/router";
 import "./index.css";
 import { seedDatabase } from "./lib/seed";
 
-seedDatabase();
+seedDatabase().catch((error) => {
+  console.error("Failed to seed database:", error);
+});
+
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <RouterProvider router={router} />
