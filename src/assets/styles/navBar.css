@@ -1,8 +1,8 @@
 .navBar .active span {
-  color: #0a66c2;
+  color: oklch(62.3% 0.214 259.815);
   font-weight: 600;
 }
 
 .navBar .active svg {
-  fill: #0a66c2;
+  fill: oklch(62.3% 0.214 259.815);
 }
