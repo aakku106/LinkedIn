@@ -34,13 +34,13 @@ export default function Navbar() {
     <nav className="fixed top-0 w-full backdrop-blur-sm navBar flex justify-between bg-white/70 dark:bg-black/70 text-black dark:text-white text-nowrap items-center-safe z-40">
       <NavLink
         to={"/"}
-        className="logo-container order-first hover:cursor-pointer hover:text-blue-700}">
+        className="logo-container order-first hover:cursor-pointer hover:text-blue-600}">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 34 34"
           data-supported-dps="64x64"
           fill="currentColor"
-          className="mercado-match m-6"
+          className="m-6"
           width="68"
           height="68"
           focusable="false">
@@ -56,7 +56,7 @@ export default function Navbar() {
         />
       </div>
 
-      <div className="mainNaviagtions flex">
+      <div className="mainNaviagtions flex items-center">
         <NavLink
           to={"/feed"}
           className={({ isActive }) =>
@@ -67,7 +67,6 @@ export default function Navbar() {
             viewBox="0 0 24 24"
             data-supported-dps="24x24"
             fill="currentColor"
-            className="mercado-match"
             width="24"
             height="24"
             focusable="false">
@@ -86,7 +85,6 @@ export default function Navbar() {
             viewBox="0 0 24 24"
             data-supported-dps="24x24"
             fill="currentColor"
-            className="mercado-match"
             width="24"
             height="24"
             focusable="false">
@@ -105,7 +103,6 @@ export default function Navbar() {
             viewBox="0 0 24 24"
             data-supported-dps="24x24"
             fill="currentColor"
-            className="mercado-match"
             width="24"
             height="24"
             focusable="false">
@@ -124,7 +121,6 @@ export default function Navbar() {
             viewBox="0 0 24 24"
             data-supported-dps="24x24"
             fill="currentColor"
-            className="mercado-match"
             width="24"
             height="24"
             focusable="false">
@@ -143,7 +139,6 @@ export default function Navbar() {
             viewBox="0 0 24 24"
             data-supported-dps="24x24"
             fill="currentColor"
-            className="mercado-match"
             width="24"
             height="24"
             focusable="false">
@@ -151,16 +146,27 @@ export default function Navbar() {
           </svg>
           <span>Notifications</span>
         </NavLink>
-      </div>
 
-      <div className="profile flex items-center">
-        <img
-          width="24"
-          src={user?.profilePic}
-          height="24"
-          alt={user?.name}
-          className="global-nav__me-photo evi-image ember-view"
-        />
+        <div className="profile m-6 flex flex-col items-center-safe hover:cursor-pointer hover:text-blue-600">
+          <img
+            width="24"
+            src={user?.profilePic}
+            height="24"
+            alt={user?.name}
+            className=" rounded-full "
+          />
+          <span className="flex items-center-safe">
+            <span>
+              Me
+            </span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"
+              aria-hidden="true" role="none" data-supported-dps="16x16"
+              fill="currentColor" width="16" height="16"
+            >
+              <path d="M8 11L3 6h10z" fillRule="evenodd"></path>
+            </svg>
+          </span>
+        </div>
       </div>
 
       <div className="extra flex">
@@ -170,7 +176,6 @@ export default function Navbar() {
             viewBox="0 0 24 24"
             data-supported-dps="24x24"
             fill="currentColor"
-            className="mercado-match"
             width="24"
             height="24"
             focusable="false">
@@ -183,7 +188,6 @@ export default function Navbar() {
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
-            id="premium-chip-v2-medium"
             aria-hidden="true"
             role="none"
             data-supported-dps="24x24"
