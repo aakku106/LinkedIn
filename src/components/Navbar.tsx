@@ -3,10 +3,12 @@ import { NavLink } from "react-router-dom";
 import "../assets/styles/navBar.css";
 import { db, type User } from "../lib/db";
 import { useAuthStore } from "../features/auth/authStore";
+import { LogoutMenu } from "./LogoutMenu";
 
 export default function Navbar() {
   const [user, setUser] = useState<User | null>(null);
   const userId = useAuthStore((state) => state.userId);
+  const [toggleLogoutMenu, setToggleLogoutMenu] = useState<boolean>(false);
 
   useEffect(() => {
     let isMounted = true;
@@ -147,7 +149,9 @@ export default function Navbar() {
           <span>Notifications</span>
         </NavLink>
 
-        <div className="profile m-6 flex flex-col items-center-safe hover:cursor-pointer hover:text-blue-600">
+        <div
+          onClick={() => setToggleLogoutMenu(!toggleLogoutMenu)}
+          className="profile m-6 flex flex-col items-center-safe hover:cursor-pointer hover:text-blue-600">
           <img
             width="24"
             src={user?.profilePic}
@@ -156,18 +160,23 @@ export default function Navbar() {
             className=" rounded-full "
           />
           <span className="flex items-center-safe">
-            <span>
-              Me
-            </span>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"
-              aria-hidden="true" role="none" data-supported-dps="16x16"
-              fill="currentColor" width="16" height="16"
-            >
+            <span>Me</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 16 16"
+              aria-hidden="true"
+              role="none"
+              data-supported-dps="16x16"
+              fill="currentColor"
+              width="16"
+              height="16">
               <path d="M8 11L3 6h10z" fillRule="evenodd"></path>
             </svg>
           </span>
         </div>
       </div>
+
+      {toggleLogoutMenu && <LogoutMenu user={user} />}
 
       <div className="extra flex">
         <div className="forBusiness m-6 flex flex-col items-center-safe hover:cursor-pointer">
