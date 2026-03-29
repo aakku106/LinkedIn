@@ -9,9 +9,7 @@ interface Props {
 export default function ProtectedRoute({ children }: Props) {
   const isLoggedIn = useAuthStore((state) => state.isLoggedIn());
 
-  if (!isLoggedIn) {
-    return <Navigate to="/login" replace />;
-  }
+  if (!isLoggedIn) return <Navigate to="/login" replace />;
 
   return children;
 }
