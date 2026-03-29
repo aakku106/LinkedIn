@@ -176,6 +176,12 @@ export default function Navbar() {
         </div>
       </div>
 
+      {toggleLogoutMenu && (
+        <div
+          onClick={() => setToggleLogoutMenu(false)}
+          className="fixed w-400 h-400 bg-transparent z-30"
+        />
+      )}
       {toggleLogoutMenu && <LogoutMenu user={user} />}
 
       <div className="extra flex">
