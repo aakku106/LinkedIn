@@ -4,6 +4,7 @@ import "../assets/styles/navBar.css";
 import { db, type User } from "../lib/db";
 import { useAuthStore } from "../features/auth/authStore";
 import { LogoutMenu } from "./LogoutMenu";
+import { SearchUsers } from "./SearchUsers";
 
 export default function Navbar() {
   const [user, setUser] = useState<User | null>(null);
@@ -50,12 +51,8 @@ export default function Navbar() {
         </svg>
       </NavLink>
 
-      <div className="search flex flex-col items-center-safe hover:cursor-pointer">
-        <input
-          type="text"
-          placeholder="Search"
-          className="outline-white border rounded-full p-2.5"
-        />
+      <div className="search flex flex-col items-center-safe hover:cursor-pointer flex-1 max-w-sm mx-6">
+        <SearchUsers />
       </div>
 
       <div className="mainNaviagtions flex items-center">
