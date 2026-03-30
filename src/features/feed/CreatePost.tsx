@@ -5,5 +5,7 @@ export async function createPost(content: string, userId: number) {
     content,
     userId,
     createdAt: Date.now(),
+    likeCount: 0,
+    likedByUserIds: [],
   });
 }
