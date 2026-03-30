@@ -22,6 +22,8 @@ export interface Post {
   content: string;
   image?: string;
   createdAt: number;
+  likeCount?: number;
+  likedByUserIds?: number[];
 }
 
 class LinkedInDB extends Dexie {
