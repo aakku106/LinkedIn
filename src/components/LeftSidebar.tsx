@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import type { User } from "../lib/db";
 import nepathyaColzLogo from "../assets/images/nepathya-logo.png";
-// import { ProfileTop } from "./ProfileTop";
 
 type UserProp = { user: User };
 
@@ -9,7 +8,6 @@ export function LeftSidebar({ user }: UserProp) {
   return (
     <aside className="order-2 self-start space-y-4 hidden xl:block xl:fixed xl:left-20 xl:top-33  xl:w-64 max-h-[calc(100vh-120px)] overflow-y-auto">
       <ProfileCard user={user} />
-      {/* <ProfileTop */}
 
       <section className="rounded-2xl border border-gray-200 bg-white p-4 text-black shadow-sm dark:border-gray-700 dark:bg-gray-950 dark:text-white">
         <div className="space-y-3">
