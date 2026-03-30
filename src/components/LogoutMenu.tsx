@@ -1,5 +1,6 @@
 import type { User } from "../lib/db";
 import { useAuthStore } from "../features/auth/authStore";
+import { NavLink } from "react-router-dom";
 
 interface LogoutMenuProps {
   user: User | null;
@@ -23,9 +24,16 @@ export const LogoutMenu = ({ user }: LogoutMenuProps) => {
           </div>
         </div>
         <div className="flex gap-3">
-          <button className="flex-1 border border-blue-400 text-blue-400 py-2 px-4 rounded-full text-sm font-semibold hover:bg-blue-400/10 transition">
+
+
+          <NavLink to="/profile"
+            className={`flex-1 border border-blue-400 text-blue-400 py-2 px-4 rounded-full text-sm font-semibold hover:bg-blue-400/10 transition`}
+          >
             View profile
-          </button>
+
+          </NavLink>
+
+
           <button className="flex-1 bg-blue-400 text-black py-2 px-4 rounded-full text-sm font-semibold hover:bg-blue-300 transition">
             Verify
           </button>
@@ -84,6 +92,6 @@ export const LogoutMenu = ({ user }: LogoutMenuProps) => {
           Sign Out
         </button>
       </div>
-    </aside>
+    </aside >
   );
 };
