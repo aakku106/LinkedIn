@@ -1,4 +1,6 @@
 import type { User, Post } from "../lib/db";
+import { db } from "../lib/db";
+import { useAuthStore } from "../features/auth/authStore";
 
 interface PostCardProps {
   post: Post;
@@ -6,6 +8,11 @@ interface PostCardProps {
 }
 
 export function PostCard({ post, author }: PostCardProps) {
+  const userId = useAuthStore((state) => state.userId);
+  const liked =
+    typeof userId === "number" && (post.likedByUserIds ?? []).includes(userId);
+  const likeCount = post.likeCount ?? 0;
+
   const postTime = new Date(post.createdAt).toLocaleString([], {
     month: "short",
     day: "numeric",
@@ -84,12 +91,47 @@ export function PostCard({ post, author }: PostCardProps) {
           alt="Post attachment"
           className="max-h-128 w-full object-cover"
         />
-        : null}
+      : null}
+
+      <div className="flex items-center justify-between border-t border-gray-200 px-4 py-2 text-xs text-gray-600 dark:border-gray-800 dark:text-gray-300">
+        <div className="flex items-center gap-2">
+          <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-blue-600 text-white">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 16 16"
+              aria-hidden="true"
+              fill="currentColor"
+              width="10"
+              height="10">
+              <path d="M12.91 7l-2.25-2.57a8.21 8.21 0 01-1.5-2.55L9 1.37A2.08 2.08 0 007 0a2.08 2.08 0 00-2.06 2.08v1.17a5.81 5.81 0 00.31 1.89l.28.86H2.38A1.47 1.47 0 001 7.47a1.45 1.45 0 00.64 1.21 1.48 1.48 0 00-.37 2.06 1.54 1.54 0 00.62.51h.05a1.6 1.6 0 00-.19.71A1.47 1.47 0 003 13.42v.1A1.46 1.46 0 004.4 15h4.83a5.61 5.61 0 002.48-.58l1-.42H14V7zM12 12.11l-1.19.52a3.59 3.59 0 01-1.58.37H5.1a.55.55 0 01-.53-.4l-.14-.48-.49-.21a.56.56 0 01-.34-.6l.09-.56-.42-.42a.56.56 0 01-.09-.68L3.55 9l-.4-.61A.28.28 0 013.3 8h5L7.14 4.51a4.15 4.15 0 01-.2-1.26V2.08A.09.09 0 017 2a.11.11 0 01.08 0l.18.51a10 10 0 001.9 3.24l2.84 3z"></path>
+            </svg>
+          </span>
+          <span>{likeCount} likes</span>
+        </div>
+      </div>
 
       <div className="flex border-t border-gray-200 px-2 py-2 text-sm text-gray-600 dark:border-gray-800 dark:text-gray-300">
         <button
           type="button"
-          className="flex-1 flex items-center justify-center gap-2 rounded-xl px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-900 min-w-0">
+          onClick={async () => {
+            if (typeof post.id !== "number" || typeof userId !== "number")
+              return;
+
+            const currentLikedByUserIds = post.likedByUserIds ?? [];
+            const nextLiked = !liked;
+            const nextLikedByUserIds =
+              nextLiked ?
+                [...new Set([...currentLikedByUserIds, userId])]
+              : currentLikedByUserIds.filter((id) => id !== userId);
+            const nextLikeCount = nextLikedByUserIds.length;
+
+            await db.posts.update(post.id, {
+              likedByUserIds: nextLikedByUserIds,
+              likeCount: nextLikeCount,
+            });
+          }}
+          aria-pressed={liked}
+          className={`flex-1 flex items-center justify-center gap-2 rounded-xl px-3 py-2 min-w-0 ${liked ? "text-blue-600" : ""} hover:bg-gray-100 dark:hover:bg-gray-900`}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 16 16"
