@@ -55,7 +55,7 @@ export default function Navbar() {
         <SearchUsers />
       </div>
 
-      <div className="mainNaviagtions flex items-center">
+      <div className="mainNaviagtions flex items-center  border-r border-r-black/10 dark:border-r-white/15 ">
         <NavLink
           to={"/feed"}
           className={({ isActive }) =>
