@@ -11,8 +11,8 @@ export function LeftSidebar({ user }: UserProp) {
 
       <section className="rounded-2xl border border-gray-200 bg-white p-4 text-black shadow-sm dark:border-gray-700 dark:bg-gray-950 dark:text-white">
         <div className="space-y-3">
-          <a
-            href="#"
+          <Link
+            to="#"
             className="flex items-center justify-between rounded-lg px-2 py-2 hover:bg-gray-100 dark:hover:bg-gray-900 cursor-pointer">
             <div>
               <p className="text-sm font-semibold">Profile viewers</p>
@@ -20,9 +20,9 @@ export function LeftSidebar({ user }: UserProp) {
             <p className="text-sm font-bold text-gray-600 dark:text-gray-300">
               28
             </p>
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            to="#"
             className="flex items-center justify-between rounded-lg px-2 py-2 hover:bg-gray-100 dark:hover:bg-gray-900 cursor-pointer">
             <div>
               <p className="text-sm font-semibold">Post impressions</p>
@@ -30,7 +30,7 @@ export function LeftSidebar({ user }: UserProp) {
             <p className="text-sm font-bold text-gray-600 dark:text-gray-300">
               5
             </p>
-          </a>
+          </Link>
         </div>
       </section>
 
@@ -141,7 +141,7 @@ function ProfileCard({ user }: UserProp) {
   return (
     <Link
       to={"/profile"}
-      className="rounded-2xl overflow-hidden bg-white shadow-sm dark:border-gray-700 dark:bg-gray-950 ">
+      className="rounded-2xl overflow-hidden bg-white  dark:border dark:bg-gray-950 ">
       <div className="relative">
         <img
           src={user.coverPic}
