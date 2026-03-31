@@ -118,13 +118,13 @@ export default function LoginPage() {
             <button className="top-contents">Productivity</button>
             <button className="top-contents">Finance</button>
             <button className="top-contents min-w-80 ml-2.5 mr-2.6">
-              Soft Skills & Emotional Intiligance
+              Soft Skills & Emotional Intelligence
             </button>
             <button className="top-contents">Project Management</button>
             <button className="top-contents">Education</button>
-            <button className="top-contents">Techonology</button>
+            <button className="top-contents">Technology</button>
             <button className="top-contents">Leadership</button>
-            <button className="top-contents">Ecommerce</button>
+            <button className="top-contents">Ectomere</button>
             <button className="top-contents">Show All</button>
           </div>
         </article>
@@ -140,13 +140,13 @@ export default function LoginPage() {
             <button className="top-contents">Productivity</button>
             <button className="top-contents">Finance</button>
             <button className="top-contents min-w-80 ml-1 mr-1">
-              Soft Skills & Emotional Intiligance
+              Soft Skills & Emotional Intelligence
             </button>
             <button className="top-contents">Project Management</button>
             <button className="top-contents">Education</button>
-            <button className="top-contents">Techonology</button>
+            <button className="top-contents">Technology</button>
             <button className="top-contents">Leadership</button>
-            <button className="top-contents">Ecommerce</button>
+            <button className="top-contents">Ectomere</button>
             <button className="top-contents">Show All</button>
           </div>
         </article>
