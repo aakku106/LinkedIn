@@ -1,54 +1,21 @@
-import { useEffect, useState } from "react";
-
-interface User {
-  id: { value: string };
-  name: { first: string; last: string };
-  picture: { large: string };
-  email: string;
-  location: { city: string; country: string };
-}
+import { useState } from "react";
+import { useSearchUsers } from "../hooks/useSearchUsers";
 
 export const SearchUsers = () => {
-  const [users, setUsers] = useState<User[]>([]);
+  const { users, loading } = useSearchUsers();
   const [searchTerm, setSearchTerm] = useState("");
-  const [filteredUsers, setFilteredUsers] = useState<User[]>([]);
-  const [loading, setLoading] = useState(false);
-  const [showResults, setShowResults] = useState(false);
 
-  useEffect(() => {
-    const fetchUsers = async () => {
-      try {
-        setLoading(true);
-        const response = await fetch("https://randomuser.me/api/?results=10");
-        const data = await response.json();
-        setUsers(data.results);
-      } catch (error) {
-        console.error("Failed to fetch users:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
+  const filteredUsers =
+    searchTerm.trim() === "" ?
+      []
+    : users.filter(
+        (user) =>
+          user.name.first.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          user.name.last.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          user.email.toLowerCase().includes(searchTerm.toLowerCase()),
+      );
 
-    fetchUsers();
-  }, []);
-
-  useEffect(() => {
-    if (searchTerm.trim() === "") {
-      setFilteredUsers([]);
-      setShowResults(false);
-      return;
-    }
-
-    const results = users.filter(
-      (user) =>
-        user.name.first.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        user.name.last.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        user.email.toLowerCase().includes(searchTerm.toLowerCase()),
-    );
-
-    setFilteredUsers(results);
-    setShowResults(true);
-  }, [searchTerm, users]);
+  const showResults = searchTerm.trim() !== "" && filteredUsers.length > 0;
 
   return (
     <div className="relative w-full">
