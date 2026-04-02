@@ -5,6 +5,7 @@ import LoginPage from "../features/auth/LoginPage";
 import FeedPage from "../features/feed/FeedPage";
 import ProfilePage from "../features/profile/ProfilePage";
 import ProtectedRoute from "./ProtectedRoute";
+import NotificationPage from "../features/notification/NotificationPage";
 
 const baseUrl = import.meta.env.BASE_URL;
 const basename = baseUrl === "/" ? "/" : baseUrl.replace(/\/$/, "");
@@ -28,7 +29,7 @@ const router = createBrowserRouter(
         { path: "network", element: <div>Network Page</div> },
         { path: "jobs", element: <div>Jobs Page</div> },
         { path: "messages", element: <div>Messages Page</div> },
-        { path: "notifications", element: <div>Notifications Page</div> },
+        { path: "notifications", element: <NotificationPage /> },
         { path: "profile", element: <ProfilePage /> },
       ],
     },
