@@ -1,3 +1,4 @@
+import { useMemo, useState } from "react";
 import type { SearchUser } from "../hooks/useSearchUsers";
 
 interface NotificationsProps {
@@ -6,7 +7,25 @@ interface NotificationsProps {
   error: string | null;
 }
 
-const tabs = ["All", "Jobs", "My posts", "Mentions"];
+type NotificationType = "jobs" | "my-posts" | "mentions";
+type NotificationTab = "all" | NotificationType;
+
+interface NotificationItem {
+  id: string;
+  user: SearchUser;
+  type: NotificationType;
+  time: string;
+  primary: string;
+  secondary: string;
+  cta: string | null;
+}
+
+const tabs: Array<{ id: NotificationTab; label: string }> = [
+  { id: "all", label: "All" },
+  { id: "jobs", label: "Jobs" },
+  { id: "my-posts", label: "My posts" },
+  { id: "mentions", label: "Mentions" },
+];
 const timeLabels = [
   "1h",
   "2h",
@@ -20,12 +39,23 @@ const timeLabels = [
   "2d",
 ];
 
-function getNotificationText(user: SearchUser, index: number) {
+function getNotificationType(index: number): NotificationType {
+  const remainder = index % 3;
+  if (remainder === 0) return "jobs";
+  if (remainder === 1) return "my-posts";
+  return "mentions";
+}
+
+function getNotificationText(
+  user: SearchUser,
+  index: number,
+  type: NotificationType,
+) {
   const fullName = `${user.name.first} ${user.name.last}`;
   const role = index % 2 === 0 ? "web developer" : "javascript developer";
   const region = index % 3 === 0 ? "Nepal" : "Asia";
 
-  if (index % 3 === 0) {
+  if (type === "jobs") {
     return {
       primary: `${role}: new opportunities in ${region}.`,
       secondary: `${fullName} and similar profiles are active around ${user.location.city}, ${user.location.country}.`,
@@ -33,7 +63,7 @@ function getNotificationText(user: SearchUser, index: number) {
     };
   }
 
-  if (index % 3 === 1) {
+  if (type === "my-posts") {
     return {
       primary: `${fullName} posted an update you might be interested in.`,
       secondary: `Discover more pages and creators around ${user.location.city}.`,
@@ -53,22 +83,48 @@ export default function Notifications({
   loading,
   error,
 }: NotificationsProps) {
-  const hasNotifications = users.length > 0;
+  const [activeTab, setActiveTab] = useState<NotificationTab>("all");
+
+  const notificationItems = useMemo<NotificationItem[]>(() => {
+    return users.map((user, index) => {
+      const type = getNotificationType(index);
+      const details = getNotificationText(user, index, type);
+      const id = user.id.value || `${user.email}-${index}`;
+
+      return {
+        id,
+        user,
+        type,
+        time: timeLabels[index % timeLabels.length],
+        primary: details.primary,
+        secondary: details.secondary,
+        cta: details.cta,
+      };
+    });
+  }, [users]);
+
+  const filteredNotifications = useMemo(() => {
+    if (activeTab === "all") return notificationItems;
+    return notificationItems.filter((item) => item.type === activeTab);
+  }, [activeTab, notificationItems]);
+
+  const hasNotifications = filteredNotifications.length > 0;
 
   return (
     <section className="mx-auto w-full max-w-5xl space-y-4 px-2 py-4 sm:px-4 md:px-6">
       <section className="rounded-2xl border border-slate-700/60 bg-linear-to-r from-slate-900 to-slate-800 p-4">
         <div className="flex flex-wrap gap-3">
-          {tabs.map((tab, index) => (
+          {tabs.map((tab) => (
             <button
-              key={tab}
+              key={tab.id}
               type="button"
+              onClick={() => setActiveTab(tab.id)}
               className={
-                index === 0 ?
+                activeTab === tab.id ?
                   "rounded-full border border-emerald-300 bg-emerald-400 px-5 py-2 text-lg font-semibold text-slate-900"
                 : "rounded-full border border-slate-500 px-5 py-2 text-lg font-semibold text-slate-200 hover:border-slate-300"
               }>
-              {tab}
+              {tab.label}
             </button>
           ))}
         </div>
@@ -84,49 +140,48 @@ export default function Notifications({
           </div>
         )}
         {!loading && !error && !hasNotifications && (
-          <div className="p-6 text-slate-200">No notifications found.</div>
+          <div className="p-6 text-slate-200">
+            No notifications found for this tab.
+          </div>
         )}
 
         {!loading && !error && hasNotifications && (
           <ul>
-            {users.map((user, index) => {
-              const details = getNotificationText(user, index);
-              const time = timeLabels[index % timeLabels.length];
-              const displayName = `${user.name.first} ${user.name.last}`;
-              const avatarKey = user.id.value || `${user.email}-${index}`;
+            {filteredNotifications.map((item) => {
+              const displayName = `${item.user.name.first} ${item.user.name.last}`;
 
               return (
                 <li
-                  key={avatarKey}
+                  key={item.id}
                   className="flex items-start gap-4 border-t border-[#3f5f82] p-4 first:border-t-0 sm:p-6">
                   <div className="mt-5 h-3 w-3 shrink-0 rounded-full bg-sky-300" />
 
                   <img
-                    src={user.picture.large}
+                    src={item.user.picture.large}
                     alt={displayName}
                     className="h-14 w-14 shrink-0 rounded-full object-cover sm:h-16 sm:w-16"
                   />
 
                   <div className="min-w-0 flex-1">
                     <p className="text-xl leading-snug text-slate-100">
-                      <span className="font-semibold">{details.primary}</span>
+                      <span className="font-semibold">{item.primary}</span>
                     </p>
                     <p className="mt-1 text-sm text-slate-300">
-                      {details.secondary}
+                      {item.secondary}
                     </p>
 
-                    {details.cta && (
+                    {item.cta && (
                       <button
                         type="button"
                         className="mt-3 rounded-full border border-sky-400 px-5 py-1.5 text-xl font-semibold text-sky-300 hover:bg-sky-400/10">
-                        {details.cta}
+                        {item.cta}
                       </button>
                     )}
                   </div>
 
                   <div className="flex items-center gap-4 pl-2 text-slate-300">
                     <span className="text-3xl leading-none">...</span>
-                    <span className="text-2xl font-semibold">{time}</span>
+                    <span className="text-2xl font-semibold">{item.time}</span>
                   </div>
                 </li>
               );
