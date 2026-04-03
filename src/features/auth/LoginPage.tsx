@@ -151,8 +151,61 @@ export default function LoginPage() {
           </div>
         </article>
 
-        <article className="login-outer-container p-24 bg-blue-200">4</article>
-        <article className="login-outer-container">5</article>
+        <article className="login-outer-container bg-[#e9e5de] px-6 py-20 text-center sm:px-10 md:py-24">
+          <h2 className="text-4xl font-normal text-[#b24020] sm:text-5xl">
+            Post your job for millions of people to see
+          </h2>
+          <button className="mt-10 rounded-full border border-blue-600 px-8 py-3 text-2xl font-semibold text-blue-700 transition hover:bg-blue-50 hover:cursor-pointer">
+            Post a job
+          </button>
+        </article>
+
+        <article className="login-outer-container bg-[#f3f2f0] px-6 py-14 sm:px-10 md:px-16">
+          <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] lg:items-start">
+            <div>
+              <h2 className="text-5xl font-normal text-gray-900 leading-tight">
+                Discover the best software tools
+              </h2>
+              <p className="mt-5 max-w-2xl text-4xl leading-relaxed text-gray-800">
+                Connect with buyers who have first-hand experience to find the
+                best products for you.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap gap-3 text-[24px] font-semibold text-gray-700">
+              <button className="rounded-full border border-gray-500 px-7 py-3 transition hover:bg-white hover:cursor-pointer">
+                E-Commerce Platforms
+              </button>
+              <button className="rounded-full border border-gray-500 px-7 py-3 transition hover:bg-white hover:cursor-pointer">
+                CRM Software
+              </button>
+              <button className="rounded-full border border-gray-500 px-7 py-3 transition hover:bg-white hover:cursor-pointer">
+                Human Resources Management Systems
+              </button>
+              <button className="rounded-full border border-gray-500 px-7 py-3 transition hover:bg-white hover:cursor-pointer">
+                Recruiting Software
+              </button>
+              <button className="rounded-full border border-gray-500 px-7 py-3 transition hover:bg-white hover:cursor-pointer">
+                Sales Intelligence Software
+              </button>
+              <button className="rounded-full border border-gray-500 px-7 py-3 transition hover:bg-white hover:cursor-pointer">
+                Project Management Software
+              </button>
+              <button className="rounded-full border border-gray-500 px-7 py-3 transition hover:bg-white hover:cursor-pointer">
+                Help Desk Software
+              </button>
+              <button className="rounded-full border border-gray-500 px-7 py-3 transition hover:bg-white hover:cursor-pointer">
+                Social Networking Software
+              </button>
+              <button className="rounded-full border border-gray-500 px-7 py-3 transition hover:bg-white hover:cursor-pointer">
+                Desktop Publishing Software
+              </button>
+              <button className="rounded-full border border-blue-600 px-8 py-3 text-blue-700 transition hover:bg-blue-50 hover:cursor-pointer">
+                Show all
+              </button>
+            </div>
+          </div>
+        </article>
         <article className="login-outer-container">6</article>
         <article className="login-outer-container">7</article>
         <article className="login-outer-container">8</article>
