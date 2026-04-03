@@ -17,7 +17,9 @@ export function LeftSidebar({ user }: UserProp) {
             <div>
               <p className="text-sm font-semibold">Profile viewers</p>
             </div>
-            <p className="text-sm font-bold text-gray-600 dark:text-gray-300">106</p>
+            <p className="text-sm font-bold text-gray-600 dark:text-gray-300">
+              106
+            </p>
           </Link>
           <Link
             to="#"
@@ -179,3 +181,5 @@ function ProfileCard({ user }: UserProp) {
     </Link>
   );
 }
+
+export { ProfileCard };
