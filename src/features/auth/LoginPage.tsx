@@ -206,7 +206,43 @@ export default function LoginPage() {
             </div>
           </div>
         </article>
-        <article className="login-outer-container">6</article>
+        <article className="login-outer-container bg-[#f3f2f0] px-6 py-12 sm:px-10 md:px-16 md:py-16">
+          <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] lg:items-start">
+            <div>
+              <h2 className="text-4xl font-normal leading-tight text-gray-900 sm:text-5xl">
+                Keep your mind sharp with games
+              </h2>
+              <p className="mt-5 max-w-2xl text-2xl leading-relaxed text-gray-800 sm:text-3xl">
+                Take a break and reconnect with your network through quick daily
+                games.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap gap-3 text-xl font-semibold text-gray-700 sm:text-[30px]">
+              <button className="rounded-full border border-gray-500 px-7 py-3 transition hover:bg-white hover:cursor-pointer">
+                Patches
+              </button>
+              <button className="rounded-full border border-gray-500 px-7 py-3 transition hover:bg-white hover:cursor-pointer">
+                Zip
+              </button>
+              <button className="rounded-full border border-gray-500 px-7 py-3 transition hover:bg-white hover:cursor-pointer">
+                Mini Sudoku
+              </button>
+              <button className="rounded-full border border-gray-500 px-7 py-3 transition hover:bg-white hover:cursor-pointer">
+                Queens
+              </button>
+              <button className="rounded-full border border-gray-500 px-7 py-3 transition hover:bg-white hover:cursor-pointer">
+                Tango
+              </button>
+              <button className="rounded-full border border-gray-500 px-7 py-3 transition hover:bg-white hover:cursor-pointer">
+                Pinpoint
+              </button>
+              <button className="rounded-full border border-gray-500 px-7 py-3 transition hover:bg-white hover:cursor-pointer">
+                Crossclimb
+              </button>
+            </div>
+          </div>
+        </article>
         <article className="login-outer-container">7</article>
         <article className="login-outer-container">8</article>
         <article className="login-outer-container px-16">
