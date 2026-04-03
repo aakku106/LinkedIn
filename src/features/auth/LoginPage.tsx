@@ -103,51 +103,90 @@ export default function LoginPage() {
           </div>
         </article>
 
-        <article className=" py-8 login-outer-container bg-blue-900 flex flex-row flex-wrap justify-between px-14">
-          <div className="TopContent p-6 text-blue-100">
-            <h2 className="header font-extrabold text-5xl">
-              Explore top LinkedIn content
-            </h2>
-            <p className="body mt-2 text-pretty">
-              Discover relevant posts and expert insights — curated by topic and
-              in one place.
-            </p>
-          </div>
-          <div className="TopContent text-blue-100 mt-2">
-            <button className="top-contents">Career</button>
-            <button className="top-contents">Productivity</button>
-            <button className="top-contents">Finance</button>
-            <button className="top-contents min-w-80 ml-2.5 mr-2.6">
-              Soft Skills & Emotional Intelligence
-            </button>
-            <button className="top-contents">Project Management</button>
-            <button className="top-contents">Education</button>
-            <button className="top-contents">Technology</button>
-            <button className="top-contents">Leadership</button>
-            <button className="top-contents">Ectomere</button>
-            <button className="top-contents">Show All</button>
+        <article className="login-outer-container bg-[#0f172a] px-6 py-14 sm:px-10 md:px-16">
+          <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] lg:items-start">
+            <div>
+              <h2 className="text-4xl font-normal leading-tight text-slate-50 sm:text-5xl">
+                Explore top LinkedIn content
+              </h2>
+              <p className="mt-5 max-w-2xl text-2xl leading-relaxed text-slate-200 sm:text-3xl">
+                Discover relevant posts and expert insights curated by topic in
+                one place.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap gap-3 text-xl font-semibold text-slate-100 sm:text-[28px]">
+              <button className="rounded-full border border-slate-400 px-7 py-3 transition hover:bg-slate-100 hover:text-slate-900 hover:cursor-pointer">
+                Career
+              </button>
+              <button className="rounded-full border border-slate-400 px-7 py-3 transition hover:bg-slate-100 hover:text-slate-900 hover:cursor-pointer">
+                Productivity
+              </button>
+              <button className="rounded-full border border-slate-400 px-7 py-3 transition hover:bg-slate-100 hover:text-slate-900 hover:cursor-pointer">
+                Finance
+              </button>
+              <button className="rounded-full border border-slate-400 px-7 py-3 transition hover:bg-slate-100 hover:text-slate-900 hover:cursor-pointer">
+                Soft Skills & Emotional Intelligence
+              </button>
+              <button className="rounded-full border border-slate-400 px-7 py-3 transition hover:bg-slate-100 hover:text-slate-900 hover:cursor-pointer">
+                Project Management
+              </button>
+              <button className="rounded-full border border-slate-400 px-7 py-3 transition hover:bg-slate-100 hover:text-slate-900 hover:cursor-pointer">
+                Education
+              </button>
+              <button className="rounded-full border border-slate-400 px-7 py-3 transition hover:bg-slate-100 hover:text-slate-900 hover:cursor-pointer">
+                Technology
+              </button>
+              <button className="rounded-full border border-slate-400 px-7 py-3 transition hover:bg-slate-100 hover:text-slate-900 hover:cursor-pointer">
+                Leadership
+              </button>
+              <button className="rounded-full border border-slate-400 px-7 py-3 transition hover:bg-slate-100 hover:text-slate-900 hover:cursor-pointer">
+                Ectomere
+              </button>
+              <button className="rounded-full border border-sky-400 px-8 py-3 text-sky-300 transition hover:bg-sky-50 hover:text-sky-700 hover:cursor-pointer">
+                Show all
+              </button>
+            </div>
           </div>
         </article>
 
-        <article className=" py-8 login-outer-container bg-white text-black flex flex-row flex-wrap justify-between px-14">
-          <div className="TopContent p-6 ">
-            <h2 className="header font-extrabold text-5xl">
-              Find the right job or internship for you
-            </h2>
-          </div>
-          <div className="TopContent mt-2">
-            <button className="top-contents">Career</button>
-            <button className="top-contents">Productivity</button>
-            <button className="top-contents">Finance</button>
-            <button className="top-contents min-w-80 ml-1 mr-1">
-              Soft Skills & Emotional Intelligence
-            </button>
-            <button className="top-contents">Project Management</button>
-            <button className="top-contents">Education</button>
-            <button className="top-contents">Technology</button>
-            <button className="top-contents">Leadership</button>
-            <button className="top-contents">Ectomere</button>
-            <button className="top-contents">Show All</button>
+        <article className="login-outer-container bg-[#ffffff] px-6 py-14 sm:px-10 md:px-16">
+          <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] lg:items-start">
+            <div>
+              <h2 className="text-4xl font-normal leading-tight text-gray-900 sm:text-5xl">
+                Find the right job or internship for you
+              </h2>
+            </div>
+
+            <div className="flex flex-wrap gap-3 text-xl font-semibold text-gray-700 sm:text-[28px]">
+              <button className="rounded-full border border-gray-500 px-7 py-3 transition hover:bg-gray-100 hover:cursor-pointer">
+                Engineering
+              </button>
+              <button className="rounded-full border border-gray-500 px-7 py-3 transition hover:bg-gray-100 hover:cursor-pointer">
+                Business Development
+              </button>
+              <button className="rounded-full border border-gray-500 px-7 py-3 transition hover:bg-gray-100 hover:cursor-pointer">
+                Finance
+              </button>
+              <button className="rounded-full border border-gray-500 px-7 py-3 transition hover:bg-gray-100 hover:cursor-pointer">
+                Administrative Assistant
+              </button>
+              <button className="rounded-full border border-gray-500 px-7 py-3 transition hover:bg-gray-100 hover:cursor-pointer">
+                Retail Associate
+              </button>
+              <button className="rounded-full border border-gray-500 px-7 py-3 transition hover:bg-gray-100 hover:cursor-pointer">
+                Customer Service
+              </button>
+              <button className="rounded-full border border-gray-500 px-7 py-3 transition hover:bg-gray-100 hover:cursor-pointer">
+                Operations
+              </button>
+              <button className="rounded-full border border-gray-500 px-7 py-3 transition hover:bg-gray-100 hover:cursor-pointer">
+                Information Technology
+              </button>
+              <button className="rounded-full border border-blue-600 px-8 py-3 text-blue-700 transition hover:bg-blue-50 hover:cursor-pointer">
+                Show all
+              </button>
+            </div>
           </div>
         </article>
 
