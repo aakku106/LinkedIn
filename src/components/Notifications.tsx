@@ -1,135 +1,71 @@
-import { useMemo, useState } from "react";
-import type { SearchUser } from "../hooks/useSearchUsers";
-import type { User } from "../lib/db";
+import { useState } from "react";
 import { ProfileCard } from "./LeftSidebar";
+import type { User } from "../lib/db";
 
-interface NotificationsProps {
-  user: User;
-  users: SearchUser[];
-  loading: boolean;
-  error: string | null;
-}
+export type NotificationType = "jobs" | "my-posts" | "mentions";
 
-type NotificationType = "jobs" | "my-posts" | "mentions";
-type NotificationTab = "all" | NotificationType;
-
-interface NotificationItem {
+export interface NotificationViewItem {
   id: string;
-  user: SearchUser;
   type: NotificationType;
+  avatar: string;
+  displayName: string;
   time: string;
   primary: string;
   secondary: string;
   cta: string | null;
 }
 
-const tabs: Array<{ id: NotificationTab; label: string }> = [
+interface NotificationsProps {
+  user: User;
+  notifications: NotificationViewItem[];
+  loading: boolean;
+  error: string | null;
+}
+
+const tabs: Array<{ id: NotificationType | "all"; label: string }> = [
   { id: "all", label: "All" },
   { id: "jobs", label: "Jobs" },
   { id: "my-posts", label: "My posts" },
   { id: "mentions", label: "Mentions" },
 ];
-const timeLabels = [
-  "1h",
-  "2h",
-  "3h",
-  "4h",
-  "12h",
-  "13h",
-  "17h",
-  "21h",
-  "1d",
-  "2d",
-];
 
-function getNotificationType(index: number): NotificationType {
-  const remainder = index % 3;
-  if (remainder === 0) return "jobs";
-  if (remainder === 1) return "my-posts";
-  return "mentions";
-}
+function NotificationLeftSidebar({ user }: { user: User }) {
+  return (
+    <aside className="hidden xl:block space-y-3 self-start">
+      <ProfileCard user={user} />
 
-function getNotificationText(
-  user: SearchUser,
-  index: number,
-  type: NotificationType,
-) {
-  const fullName = `${user.name.first} ${user.name.last}`;
-  const role = index % 2 === 0 ? "web developer" : "javascript developer";
-  const region = index % 3 === 0 ? "Nepal" : "Asia";
-
-  if (type === "jobs") {
-    return {
-      primary: `${role}: new opportunities in ${region}.`,
-      secondary: `${fullName} and similar profiles are active around ${user.location.city}, ${user.location.country}.`,
-      cta: "View jobs",
-    };
-  }
-
-  if (type === "my-posts") {
-    return {
-      primary: `${fullName} posted an update you might be interested in.`,
-      secondary: `Discover more pages and creators around ${user.location.city}.`,
-      cta: null,
-    };
-  }
-
-  return {
-    primary: `New message opportunities are available from ${fullName}.`,
-    secondary: `Open requests from ${user.location.city}, ${user.location.country}.`,
-    cta: "Respond",
-  };
+      <section className="rounded-2xl border border-slate-700/60 bg-linear-to-r from-slate-900 to-slate-800 p-6 text-slate-100 shadow-sm">
+        <h2 className="text-5xl/12 font-semibold tracking-tight">
+          Manage your notifications
+        </h2>
+        <button
+          type="button"
+          className="mt-6 text-4xl font-semibold text-sky-300 hover:text-sky-200">
+          View settings
+        </button>
+      </section>
+    </aside>
+  );
 }
 
 export default function Notifications({
   user,
-  users,
+  notifications,
   loading,
   error,
 }: NotificationsProps) {
-  const [activeTab, setActiveTab] = useState<NotificationTab>("all");
+  const [activeTab, setActiveTab] = useState<NotificationType | "all">("all");
 
-  const notificationItems = useMemo<NotificationItem[]>(() => {
-    return users.map((user, index) => {
-      const type = getNotificationType(index);
-      const details = getNotificationText(user, index, type);
-      const id = user.id.value || `${user.email}-${index}`;
-
-      return {
-        id,
-        user,
-        type,
-        time: timeLabels[index % timeLabels.length],
-        primary: details.primary,
-        secondary: details.secondary,
-        cta: details.cta,
-      };
-    });
-  }, [users]);
-
-  const filteredNotifications = useMemo(() => {
-    if (activeTab === "all") return notificationItems;
-    return notificationItems.filter((item) => item.type === activeTab);
-  }, [activeTab, notificationItems]);
+  const filteredNotifications =
+    activeTab === "all" ? notifications : (
+      notifications.filter((item) => item.type === activeTab)
+    );
 
   const hasNotifications = filteredNotifications.length > 0;
 
   return (
     <section className="mx-auto grid w-full max-w-7xl gap-4 px-2 py-4 sm:px-4 md:px-6 xl:grid-cols-[20rem_minmax(0,1fr)]">
-      <aside className="hidden xl:block space-y-3 self-start">
-        <ProfileCard user={user} />
-
-        <section className="rounded-2xl border border-slate-700/60 bg-linear-to-r from-slate-900 to-slate-800 p-6 text-slate-100 shadow-sm">
-          <h2 className="text-5xl/12 font-semibold tracking-tight">
-            Manage your notifications
-          </h2>
-          <button
-            type="button"
-            className="mt-6 text-4xl font-semibold text-sky-300 hover:text-sky-200">
-            View settings
-          </button>
-        </section>
-      </aside>
+      <NotificationLeftSidebar user={user} />
 
       <div className="space-y-4">
         <section className="rounded-2xl border border-slate-700/60 bg-linear-to-r from-slate-900 to-slate-800 p-4">
@@ -167,47 +103,41 @@ export default function Notifications({
 
           {!loading && !error && hasNotifications && (
             <ul>
-              {filteredNotifications.map((item) => {
-                const displayName = `${item.user.name.first} ${item.user.name.last}`;
+              {filteredNotifications.map((item) => (
+                <li
+                  key={item.id}
+                  className="flex items-start gap-4 border-t border-[#3f5f82] p-4 first:border-t-0 sm:p-6">
+                  <div className="mt-5 h-3 w-3 shrink-0 rounded-full bg-sky-300" />
 
-                return (
-                  <li
-                    key={item.id}
-                    className="flex items-start gap-4 border-t border-[#3f5f82] p-4 first:border-t-0 sm:p-6">
-                    <div className="mt-5 h-3 w-3 shrink-0 rounded-full bg-sky-300" />
+                  <img
+                    src={item.avatar}
+                    alt={item.displayName}
+                    className="h-14 w-14 shrink-0 rounded-full object-cover sm:h-16 sm:w-16"
+                  />
 
-                    <img
-                      src={item.user.picture.large}
-                      alt={displayName}
-                      className="h-14 w-14 shrink-0 rounded-full object-cover sm:h-16 sm:w-16"
-                    />
+                  <div className="min-w-0 flex-1">
+                    <p className="text-xl leading-snug text-slate-100">
+                      <span className="font-semibold">{item.primary}</span>
+                    </p>
+                    <p className="mt-1 text-sm text-slate-300">
+                      {item.secondary}
+                    </p>
 
-                    <div className="min-w-0 flex-1">
-                      <p className="text-xl leading-snug text-slate-100">
-                        <span className="font-semibold">{item.primary}</span>
-                      </p>
-                      <p className="mt-1 text-sm text-slate-300">
-                        {item.secondary}
-                      </p>
+                    {item.cta && (
+                      <button
+                        type="button"
+                        className="mt-3 rounded-full border border-sky-400 px-5 py-1.5 text-xl font-semibold text-sky-300 hover:bg-sky-400/10">
+                        {item.cta}
+                      </button>
+                    )}
+                  </div>
 
-                      {item.cta && (
-                        <button
-                          type="button"
-                          className="mt-3 rounded-full border border-sky-400 px-5 py-1.5 text-xl font-semibold text-sky-300 hover:bg-sky-400/10">
-                          {item.cta}
-                        </button>
-                      )}
-                    </div>
-
-                    <div className="flex items-center gap-4 pl-2 text-slate-300">
-                      <span className="text-3xl leading-none">...</span>
-                      <span className="text-2xl font-semibold">
-                        {item.time}
-                      </span>
-                    </div>
-                  </li>
-                );
-              })}
+                  <div className="flex items-center gap-4 pl-2 text-slate-300">
+                    <span className="text-3xl leading-none">...</span>
+                    <span className="text-2xl font-semibold">{item.time}</span>
+                  </div>
+                </li>
+              ))}
             </ul>
           )}
         </section>
