@@ -8,3 +8,6 @@
       sans-serif;
   }
 }
+*{
+  -webkit-user-drag: none;
+}
