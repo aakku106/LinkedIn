@@ -23,6 +23,7 @@ export function CreatePostForm({ user }: CreatePostProps) {
         <img
           src={user.profilePic}
           alt={user.name}
+          loading="lazy"
           className="h-12 w-12 rounded-full object-cover"
         />
         <textarea

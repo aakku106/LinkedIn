@@ -16,6 +16,7 @@ export const LogoutMenu = ({ user }: LogoutMenuProps) => {
           <img
             src={user?.profilePic}
             alt={user?.name}
+            loading="lazy"
             className="w-16 h-16 rounded-full object-cover"
           />
           <div className="flex-1">

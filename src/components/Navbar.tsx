@@ -154,7 +154,8 @@ export default function Navbar() {
             src={user?.profilePic}
             height="24"
             alt={user?.name}
-            className=" rounded-full "
+            className="rounded-full"
+            loading="lazy"
           />
           <span className="flex items-center-safe">
             <span>Me</span>

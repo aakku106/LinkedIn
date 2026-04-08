@@ -75,6 +75,7 @@ export default function LoginPage() {
                 title="Social Google Plus SVG File"
                 width="50"
                 height="50"
+                loading="lazy"
               />
               <span className="text-center mr-8">Continue with Google</span>
             </button>
@@ -99,6 +100,7 @@ export default function LoginPage() {
               width="480"
               alt="Welcome to your professional community"
               src={LoginWelcomeImg}
+              loading="lazy"
             />
           </div>
         </article>

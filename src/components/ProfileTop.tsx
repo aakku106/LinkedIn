@@ -17,12 +17,14 @@ rounded-2xl w-full">
           src={user.coverPic}
           className="w-full rounded-t-2xl aspect-4/1 object-cover"
           alt={`${user.name} Cover Picture`}
+          loading="lazy"
         />
         <div className="absolute bottom-0 left-4 sm:left-8 translate-y-1/2 sm:border-4 border-3 border-white dark:border-black rounded-full">
           <img
             src={user.profilePic}
             className="rounded-full w-24 sm:w-36 aspect-square object-cover"
             alt={`${user.name} profile picture`}
+            loading="lazy"
           />
         </div>
       </div>
@@ -38,6 +40,7 @@ rounded-2xl w-full">
               height="24"
               width="34"
               className="bio_clzLogo"
+              loading="lazy"
             />
             <span className="text-black dark:text-white">{user.school}</span>
           </div>

@@ -147,6 +147,7 @@ function ProfileCard({ user }: UserProp) {
           src={user.coverPic}
           className="w-full rounded-t-2xl aspect-4/1 object-cover"
           alt="Cover Picture"
+          loading="lazy"
         />
         <div className="absolute bottom-0 left-4 translate-y-1/2 border-4 border-white dark:border-gray-950 rounded-full">
           <img

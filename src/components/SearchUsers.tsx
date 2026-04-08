@@ -41,6 +41,7 @@ export const SearchUsers = () => {
                     <img
                       src={user.picture.large}
                       alt={`${user.name.first} ${user.name.last}`}
+                      loading="lazy"
                       className="w-10 h-10 rounded-full object-cover"
                     />
                     <div className="flex-1 min-w-0">

@@ -26,6 +26,7 @@ export function PostCard({ post, author }: PostCardProps) {
         <img
           src={author?.profilePic}
           alt={author?.name}
+          loading="lazy"
           className="h-12 w-12 rounded-full object-cover"
         />
 
@@ -89,6 +90,7 @@ export function PostCard({ post, author }: PostCardProps) {
         <img
           src={post.image}
           alt="Post attachment"
+          loading="lazy"
           className="max-h-128 w-full object-cover"
         />
       : null}
