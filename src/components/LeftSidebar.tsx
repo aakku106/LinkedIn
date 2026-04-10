@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import type { User } from "../lib/db";
-import nepathyaColzLogo from "../assets/images/nepathya-logo.jpeg";
+import nepathyaColzLogo from "../assets/images/nepathya-logo.webp";
 
 type UserProp = { user: User };
 

@@ -1,6 +1,6 @@
 import { db, type User } from "./db";
-import profilePic from "../assets/images/profile-pic.jpeg";
-import coverPic from "../assets/images/profile-coverPic.jpeg";
+import profilePic from "../assets/images/profile-pic.webp";
+import coverPic from "../assets/images/profile-coverPic.webp";
 
 const seededUsers: Omit<User, "id">[] = [
   {

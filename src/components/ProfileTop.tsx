@@ -1,4 +1,4 @@
-import nepathyaColzLogo from "../assets/images/nepathya-logo.jpeg";
+import nepathyaColzLogo from "../assets/images/nepathya-logo.webp";
 import "../assets/styles/profileTop.css";
 import type { User } from "../lib/db";
 
