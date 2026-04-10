@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
-import LoginWelcomeImg from "../../assets/images/welcomeToCommunityLoginPage.png";
+import LoginWelcomeImg from "../../assets/images/welcomeToCommunityLoginPage.jpeg";
 import "../../assets/styles/login.css";
 import LoginWithEmail from "../../components/LoginWithEmail";
 import { db } from "../../lib/db";
