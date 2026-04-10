@@ -32,7 +32,7 @@ export const useSearchUsers = () => {
       //Paila fetch na bhakay bhayyay fetch garni ani set item han dini
       try {
         setLoading(true);
-        const response = await fetch("https://randomuser.me/api/?results=10");
+        const response = await fetch("https://randomuser.me/api/?results=20");
         const data = await response.json();
         setUsers(data.results);
         // Store in sessionStorage for future use
