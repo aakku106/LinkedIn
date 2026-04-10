@@ -102,36 +102,48 @@ src/
 
 ## Prerequisites
 
-- Node.js (current LTS recommended)
-- npm
+- Bun (primary runtime/package manager used in this project)
+- Node.js + npm (optional alternative; commands are equivalent)
 
-## Install
+## Install (Bun)
+
+```bash
+bun install
+```
+
+## Run Development Server (Bun)
+
+```bash
+bun run dev
+```
+
+## Build (Bun)
+
+```bash
+bun run build
+```
+
+## Preview Production Build (Bun)
+
+```bash
+bun run preview
+```
+
+## Lint (Bun)
+
+```bash
+bun run lint
+```
+
+## Equivalent npm Commands
+
+If you prefer Node.js + npm, use the same scripts:
 
 ```bash
 npm install
-```
-
-## Run Development Server
-
-```bash
 npm run dev
-```
-
-## Build
-
-```bash
 npm run build
-```
-
-## Preview Production Build
-
-```bash
 npm run preview
-```
-
-## Lint
-
-```bash
 npm run lint
 ```
 
@@ -142,6 +154,16 @@ npm run lint
 - Authentication is local-only (no backend API).
 - Credentials are stored in IndexedDB for demo use; this is not production-grade auth.
 
-## Deployment Base Path
+## GitHub Deployment
 
-`vite.config.ts` includes base path handling for GitHub Actions / GitHub Pages. The build adjusts `base` depending on repository naming conventions.
+This project is configured for GitHub Pages deployment.
+
+- `vite.config.ts` sets `base` dynamically when running in GitHub Actions.
+- For `<username>.github.io` repositories, base path resolves to `/`.
+- For project repositories, base path resolves to `/<repo-name>/`.
+
+Typical deployment flow:
+
+1. Build the app in CI with `bun run build`.
+2. Publish the generated `dist` directory to GitHub Pages.
+3. Ensure Pages is configured to deploy from the GitHub Actions workflow.
